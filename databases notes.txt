@@ -1,0 +1,4 @@
+stories (image/text)
+drives (individual/organizational) id, title, location, goal, image, description
+users
+community - id, title, healthcardholders, donors, summer regs, spring regs, fall regs, 
