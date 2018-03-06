@@ -17,7 +17,6 @@ This is a project for Organ Donation. The purpose of this project is to bring aw
 * [NPM](https://www.npmjs.com/) : Package Manager
 * [Ruby](http://www.ruby-lang.org/en/) : A dynamic, open source programming language with a focus on simplicity and productivity.
 * [Foundation](https://foundation.zurb.com/) : Allowing easier access for downsizing from Desktop to Tablet to Mobile
-* [Google Analytics](https://www.google.com/analytics/analytics/#?modal_active=none) : Used to create and embed dashboards
 
 ### How to run tests ###
 
