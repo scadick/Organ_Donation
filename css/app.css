@@ -1,3 +1,11 @@
+body {
+  background: url("../images/bckgrd.jpg");
+  height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 header {
   color: #e52b50;
@@ -47,6 +55,8 @@ h1, h2, h3, h4, a {
   width: 20vw;
   position: absolute;
   top: 0;
+  z-index: 1;
+  box-shadow: 0 30px 50px 15px rgba(0, 0, 0, 0.25);
 }
 
 #ribbon {
@@ -98,10 +108,6 @@ h1, h2, h3, h4, a {
   padding: 5px;
   width: 40%;
   text-align: center;
-}
-
-#mainContent {
-  background: url("../images/bckgrd.jpg");
 }
 
 li, p {
@@ -266,7 +272,7 @@ footer h3 {
 
 .nested{
   list-style-type: none;
-  background-color: #bbbbbb;
+  background-color: #888888;
   margin-left: 0;
 }
 
@@ -276,7 +282,7 @@ footer h3 {
 
 .nested p {
   padding: 2% 4%;
-  background-color: #bbbbbb;
+  background-color: #888888;
   margin-bottom: 0;
   font-size: 1em;
 }
@@ -313,6 +319,7 @@ footer h3 {
   background-color: #e52b50;
   text-align: center;
   margin: 0 auto;
+  padding-top: 15px;
 }
 
 #drivesBanner p, #drivesBanner a{
@@ -334,7 +341,7 @@ footer h3 {
 }
 
 #driveButton:hover {
-  background-color: #bbbbbb;
+  background-color: #888888;
 }
 
 #drivesTabs .button{
@@ -342,7 +349,7 @@ footer h3 {
   font-family: 'Anton', sans-serif;
   font-size: 1.75em;
   color: white;
-  background-color: #bbbbbb;
+  background-color: #888888;
 }
 
 #drivesTabs .button:hover{
@@ -371,7 +378,7 @@ th {
 
 th h5 {
   font-family: 'Anton', sans-serif;
-  font-size: 1.25em;
+  font-size: 1.75em;
   margin-bottom: 0;
 }
 
@@ -391,7 +398,7 @@ th h5 {
 
 .driveTitle{
   text-align: center;
-  background-color: #bbbbbb;
+  background-color: #888888;
   color: white;
   font-family: 'Anton', sans-serif;
   font-size: 2em;
@@ -400,7 +407,7 @@ th h5 {
 
 .driveStart {
   text-align: center;
-  background-color: #bbbbbb;
+  background-color: #888888;
   color: white;
   font-family: 'Anton', sans-serif;
   font-size: 1.75em;
@@ -408,7 +415,7 @@ th h5 {
 }
 
 .driveRegister {
-  background-color: #bbbbbb;
+  background-color: #888888;
   color: white;
   border: 4px solid white;
 }
@@ -483,7 +490,7 @@ th h5 {
 }
 
 #shareButton:hover {
-  background-color: #bbbbbb;
+  background-color: #888888;
 }
 
 .userSubmitted {
@@ -506,7 +513,7 @@ th h5 {
 }
 
 #userStory a:hover{
-  color: #bbbbbb;
+  color: #888888;
 }
 
 /*Tablet*/
