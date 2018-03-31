@@ -129,6 +129,7 @@ footer {
   color: white;
   text-align: center;
   margin-top: 20px;
+  clear: both;
 }
 
 footer h3 {
@@ -530,7 +531,7 @@ th h5 {
   display: block;
 }
 
-.lightBox {
+.lightBox{
   color: white;
   background-color: #e52b50;
   width: 60%;
@@ -539,13 +540,22 @@ th h5 {
   text-align: center;
 }
 
-.lightBox a {
+.lightBox a{
   color: white;
   font-family: 'Oxygen', sans-serif;
   font-size: 2em;
 }
 
-.shareStory {
+.driveBox p, .driveBox h4{
+  text-align: left;
+}
+
+.driveBox img {
+  height: 100px;
+  margin-right: 10px;
+}
+
+.shareStory, .supportCause {
   background: white;
   color: #e52b50;
   font-family: 'Anton', sans-serif;
@@ -571,6 +581,10 @@ th h5 {
   cursor: pointer;
 }
 
+#editButton{
+  clear: both;
+}
+
 label {
   font-family: 'Anton', sans-serif;
   color: #e52b50;
@@ -585,6 +599,16 @@ label {
 
 .field {
   padding: 5px;
+}
+
+.field1 input {
+  width: 75%;
+  float: right;
+}
+
+.field1 label {
+  float: left;
+  width: 25%;
 }
 
 [type='text'], [type='password'], [type='tel'], [type='email'] {
@@ -622,12 +646,11 @@ label {
 .profilePic {
   padding: 40px;
   background-color: #888888;
-  border-radius: 100px;
-  width: 200px;
-  height: 200px;
+  border-radius: 50%;
   color: white;
   font-family: 'Oxygen', sans-serif;
   text-align: center;
+  margin: 0 auto;
   float: left;
 }
 
@@ -639,11 +662,67 @@ label {
   width: 60%;
 }
 
-.yourDrives h3 {
+.yourDrives h4 {
   margin-top: 20px;
   background-color: #e52b50;
   color: white;
   text-align: center;
+  display: inline-block;
+  padding: 15px;
+}
+
+.yourDrives a {
+  color: #e52b50;
+  clear: both;
+  font-family: 'Oxygen', sans-serif;
+  float: right;
+}
+
+.personalDrives {
+  background-color: #e52b50;
+  color: white;
+  padding: 10px;
+  width: 49%;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.personalInfo {
+  margin-left: 15px;
+  background-color: #888888;
+}
+
+.personClass {
+  color: #e52b50;
+  background-color: #888888;
+  margin-right: 10px;
+  border-right: 5px solid #e52b50;
+  display: inline;
+}
+
+.personalInfo h3{
+  color: #e52b50;
+  margin-right: 10px;
+  padding: 0 15px;
+  display: inline;
+}
+
+.personalInfo p{
+  color: white;
+  background-color: #888888;
+  font-size: 1.25em;
+  display: inline;
+}
+
+.centerSubmit {
+  text-align: center;
+}
+
+#editButton {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 /*Tablet*/
