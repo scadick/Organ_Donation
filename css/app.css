@@ -1,0 +1,531 @@
+body {
+  background: url("../images/bckgrd.jpg");
+  height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+  color: #e52b50;
+}
+
+h1, h2, h3, h4, a {
+  font-family: 'Anton', sans-serif;
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.menu-icon::after {
+  background: #e52b50;
+   box-shadow: 0 12px 0 #e52b50, 0 24px 0 #e52b50;
+   -webkit-box-shadow: 0 12px 0 #e52b50, 0 24px 0 #e52b50;
+   height: 8px;
+}
+
+.menu-icon:hover::after {
+  background: #cacaca;
+  box-shadow: 0 12px 0 #cacaca, 0 24px 0 #cacaca;
+}
+
+#closeButton {
+  color: white;
+}
+
+#closeButton:hover {
+  color: black;
+}
+
+#menuHeader {
+  font-size: 3em;
+  color: #e52b50;
+}
+
+#hamMenu {
+  display: block !important;
+  background: none;
+}
+
+#mainNav{
+  background-color: #e52b50;
+  width: 20vw;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 30px 50px 15px rgba(0, 0, 0, 0.25);
+  transition: display 1s;
+}
+
+.navShow {
+  display: block !important;
+}
+
+#ribbon {
+  border: 10vw solid #e52b50;
+  border-top: 0;
+  border-bottom: 30px solid transparent;
+  bottom: -50px;
+  left: 0;
+  position: absolute;
+  height: 55px;
+}
+
+#mainNav ul{
+  width: 73%;
+  margin: 0 auto;
+  background-color: #e52b50;
+}
+
+#mainNav li{
+  text-align: center;
+  border-bottom: 2px solid white;
+  text-transform: uppercase;
+}
+
+#mainNav a{
+  margin: 0 auto;
+  width: 100%;
+  color: white;
+  font-size: 1.25em;
+}
+
+#mainNav li:last-child {
+  font-size: 1.45em;
+  margin-top: 20px;
+}
+
+#mainNav a:hover::after {
+  content: " -";
+}
+
+#mainNav a:hover::before {
+  content: "- ";
+}
+
+.pageTitles {
+  border-bottom: 5px solid #e52b50;
+  color: #e52b50;
+  font-size: 3em;
+  padding: 5px;
+  width: 40%;
+  text-align: center;
+}
+
+li, p {
+  font-family: 'Oxygen', sans-serif;
+  line-height: 1.25;
+}
+
+#contact p{
+  text-align: left;
+  margin-left: 230px;
+}
+
+footer {
+  background-color: #e52b50;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer h3 {
+  margin-top: 15px;
+  text-decoration: underline;
+}
+
+#socMed {
+  text-decoration: none;
+}
+
+#sM {
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 50%;
+}
+
+#sM h3, #sM a{
+  float: left;
+  margin: 0 5px 0 5px;
+}
+
+#trillium {
+  clear: both;
+}
+
+#trillium a, #trillium p{
+  float: left;
+  clear: left;
+}
+
+#trillium a {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#trillium p {
+  font-size: 0.75em;
+  border-bottom: 3px solid white;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#ontario {
+  clear: both;
+  margin-top: 15px;
+}
+
+#ontario img {
+  margin-right: 25px;
+}
+
+#bottomP {
+  margin-bottom: 30px;
+}
+
+.contentMenu {
+  background-color: #e52b50;
+}
+
+.contentMenu .button{
+  font-family: 'Anton', sans-serif;
+  font-size: 1.75em;
+  color: white;
+  background-color: #e52b50;
+}
+
+.aboutActive{
+  text-decoration: underline !important;
+}
+
+.aboutActive:hover{
+  text-decoration: underline;
+}
+
+.aboutContent p{
+  color: white;
+  padding: 0 20%;
+}
+
+#process h3, #process h4{
+  color: white;
+  background-color: #e52b50;
+}
+
+#process {
+  background-color: #e52b50;
+}
+
+.aboutContent h3, .aboutContent h4{
+  text-align: center;
+}
+
+#facts h3 {
+  color: #e52b50;
+  text-decoration: underline;
+}
+
+#facts h4 {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #e52b50;
+  text-decoration: underline;
+}
+
+#registration, #donation {
+  width: 48%;
+  background-color: #e52b50;
+}
+
+#registration p, #donation p{
+  padding: 0 5%;
+  height: 500px;
+}
+
+#faq h3 {
+  color: #e52b50;
+  border-bottom: 3px solid #e52b50;
+  width: 15%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 0 0 15px 0;
+}
+
+#faq > ul > li{
+  color: white;
+  background-color: #e52b50;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#faq > ul > li > a{
+  color: white;
+  width: 95%;
+  font-size: 1.25em;
+  line-height: 1.1;
+}
+
+#faq > ul {
+  width: 49%;
+}
+
+#faq > ul:last-child {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.nested{
+  list-style-type: none;
+  background-color: #888888;
+  margin-left: 0;
+}
+
+.accordion-menu .nested.is-accordion-submenu{
+  margin-left: 0;
+}
+
+.nested p {
+  padding: 2% 4%;
+  background-color: #888888;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+
+.accordion-menu .is-accordion-submenu a {
+  padding: 0;
+}
+
+.nested p a {
+  color: white;
+  margin: 0;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after {
+  border-color: white transparent transparent;
+  border-width: 10px;
+  right: 0;
+  -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+  -ms-transform-origin: 50% 10%;
+      transform-origin: 50% 10%;
+}
+
+.accordion-menu .is-accordion-submenu-parent[aria-expanded='true'] > a::after {
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  -ms-transform-origin: 50% 10%;
+      transform-origin: 50% 10%;
+}
+
+#drivesBanner {
+  color: white;
+  background-color: #e52b50;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+#drivesBanner p, #drivesBanner a{
+  text-align: center;
+  font-size: .8em;
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  float: none;
+}
+
+#driveButton {
+  color: #e52b50;
+  background-color: white;
+  font-family: 'Anton', sans-serif;
+  border-radius: 25px;
+  font-size: 2em;
+  padding: 15px;
+  cursor: pointer;
+}
+
+#driveButton:hover {
+  background-color: #888888;
+}
+
+#drivesTabs .button{
+  margin-top: 15px;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.75em;
+  color: white;
+  background-color: #888888;
+}
+
+.driveTypeActive{
+  background-color: #e52b50 !important;
+  transition: background-color 0.1s ease-out, color 0.1s ease-out;
+}
+
+#imageTitle {
+  background-color: #e52b50;
+  text-align: center;
+  width: 200px;
+  height: 30px;
+}
+
+th {
+  font-family: 'Anton', sans-serif;
+  color: white;
+  background-color: #e52b50;
+  text-align: center;
+  border: 4px solid white;
+  font-size: 1.25em;
+  margin-bottom: 0;
+}
+
+th:nth-child(2) {
+  width: 45%;
+}
+
+.driveInfo {
+  display: inline-block;
+}
+
+.driveImage {
+  padding: 0;
+  border: 4px solid white;
+}
+
+.driveImage img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.driveTitle{
+  text-align: center;
+  background-color: #888888;
+  color: white;
+  font-family: 'Anton', sans-serif;
+  font-size: 2em;
+  border: 4px solid white;
+}
+
+.driveStart {
+  text-align: center;
+  background-color: #888888;
+  color: white;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.75em;
+  border: 4px solid white;
+}
+
+.driveRegister {
+  background-color: #888888;
+  color: white;
+  border: 4px solid white;
+}
+
+.driveMonth {
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+  font-size: 1.2em;
+}
+
+.monthNum {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+.totalNum {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
+
+.driveTotal {
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  width: 50%;
+  font-size: 1.2em;
+}
+
+.pagination ul li a {
+  text-align: center;
+}
+
+.pagination .current {
+  background-color: #e52b50;
+  color: white;
+}
+
+.pagination a {
+  color: #e52b50;
+}
+
+.mainStory {
+  background-color: #e52b50;
+  color: white;
+  width: 75%;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.mainStory h4 {
+  text-decoration: underline;
+}
+
+#submitStory {
+  text-align: center;
+  padding: 15px;
+}
+
+#shareButton {
+  background: #e52b50;
+  color: white;
+  font-family: 'Anton', sans-serif;
+  border-radius: 25px;
+  font-size: 1.5em;
+  padding: 15px 40px;
+  cursor: pointer;
+}
+
+#shareButton:hover {
+  background-color: #888888;
+}
+
+.userSubmitted {
+  padding: 15px;
+}
+
+#userStory {
+  background-color: #e52b50;
+  color: white;
+  width: 300px;
+  padding: 10px;
+}
+
+#userStory h3{
+  text-decoration: underline;
+}
+
+#userStory a {
+  color: white;
+}
+
+#userStory a:hover{
+  color: #888888;
+}
+
+/*Tablet*/
+@media screen and (min-width: 40em) {
+}
+
+/*Desktop*/
+@media screen and (min-width: 60em) {
+}
