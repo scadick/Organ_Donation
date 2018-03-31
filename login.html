@@ -15,7 +15,7 @@
     <header class="grid-x">
       <div class="small-3 cell float-right small-offset-9">
         <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
-          <h3 class="title-bar-title" id="menuHeader">BE A HERO</h3>
+          <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration"><h3 class="title-bar-title" id="menuHeader">BE A HERO</h3></a>
           <button class="menu-icon" type="button" data-toggle="mainNav">
           </button>
         </div>
@@ -28,15 +28,66 @@
             <li><a href="stories.html">Stories</a></li>
             <li><a href="#">Log In/Sign Up</a></li>
             <li><a href="profile.html">Your Profile</a></li>
-            <li><a href="#">BE A HERO</a></li>
+            <li><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration">BE A HERO</a></li>
           </ul>
           <div id="ribbon"></div>
         </nav>
       </div>
     </header>
+    
   <section id="mainContent">
     <h3 class="small-12 cell pageTitles">LOGIN</h3>
-
+    <div class="grid-container">
+      <form method="post">
+  			<label>USERNAME</label>
+  			<input type="text" name="username" value="">
+  			<label>PASSWORD</label>
+  			<input type="password" name="password" value="">
+        <a href="forgotpassword.html" id="forgotPassword">Forgot you password?</a>
+  			<br>
+  			<input type="submit" name="submit" value="SUBMIT" id="loginButton">
+  		</form>
+    </div>
+    <h3 class="small-12 cell pageTitles">REGISTER</h3>
+    <div class="grid-container">
+        <p id="reqField">*Required Fields</p>
+        <form id="contactForm" method="post">
+        <div class="grid-x">
+          <div class="small-12 medium-6 cell field">
+           <label for="fname">FIRST NAME*</label>
+           <input type="text" required id="fname" name="firstName">
+          </div>
+          <div class="small-12 medium-6 cell field">
+           <label for="lname">LAST NAME*</label>
+           <input type="text" required id="lname" name="lastName">
+          </div>
+          <div class="small-12 cell field">
+           <label>USERNAME*</label>
+     			 <input type="text" required name="username" value="">
+          </div>
+          <div class="small-12 cell field">
+     			 <label>PASSWORD*</label>
+     			 <input type="password" required name="password" value="">
+          </div>
+          <div class="small-12 cell field">
+     			 <label>CONFIRM PASSWORD*</label>
+     			 <input type="password" required name="password" value="">
+          </div>
+          <div class="small-12 cell medium-5 cell field">
+           <label for="email">EMAIL*</label>
+           <input type="email" required id="email" name="email">
+          </div>
+          <div class="small-12 medium-3 cell field">
+           <label for="postal">POSTAL CODE*</label>
+           <input type="text" required id="pCode" name="postalCode">
+          </div>
+          <div class="small-12 medium-4 cell field">
+           <label for="tel">PHONE NUMBER</label>
+           <input type="tel" id="phone" name="phone">
+          </div>
+           <input type="submit" name="submit" value="SUBMIT" id="regButton">
+        </div>
+       </form>
     </div>
   </section>
 

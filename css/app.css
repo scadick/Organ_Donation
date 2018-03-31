@@ -1,3 +1,11 @@
+body {
+  background: url("../images/bckgrd.jpg");
+  height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 header {
   color: #e52b50;
@@ -5,6 +13,10 @@ header {
 
 h1, h2, h3, h4, a {
   font-family: 'Anton', sans-serif;
+}
+
+table tbody td {
+  padding: 0;
 }
 
 .menu-icon {
@@ -47,6 +59,8 @@ h1, h2, h3, h4, a {
   width: 20vw;
   position: absolute;
   top: 0;
+  z-index: 1;
+  box-shadow: 0 30px 50px 15px rgba(0, 0, 0, 0.25);
 }
 
 #ribbon {
@@ -98,10 +112,6 @@ h1, h2, h3, h4, a {
   padding: 5px;
   width: 40%;
   text-align: center;
-}
-
-#mainContent {
-  background: url("../images/bckgrd.jpg");
 }
 
 li, p {
@@ -266,7 +276,7 @@ footer h3 {
 
 .nested{
   list-style-type: none;
-  background-color: #bbbbbb;
+  background-color: #888888;
   margin-left: 0;
 }
 
@@ -276,7 +286,7 @@ footer h3 {
 
 .nested p {
   padding: 2% 4%;
-  background-color: #bbbbbb;
+  background-color: #888888;
   margin-bottom: 0;
   font-size: 1em;
 }
@@ -289,6 +299,11 @@ footer h3 {
   color: white;
   margin: 0;
   font-family: 'Oxygen', sans-serif;
+  display: inline;
+}
+
+.nested a {
+  text-decoration: underline;
 }
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after {
@@ -313,6 +328,7 @@ footer h3 {
   background-color: #e52b50;
   text-align: center;
   margin: 0 auto;
+  padding-top: 15px;
 }
 
 #drivesBanner p, #drivesBanner a{
@@ -333,16 +349,13 @@ footer h3 {
   cursor: pointer;
 }
 
-#driveButton:hover {
-  background-color: #bbbbbb;
-}
 
 #drivesTabs .button{
   margin-top: 15px;
   font-family: 'Anton', sans-serif;
   font-size: 1.75em;
   color: white;
-  background-color: #bbbbbb;
+  background-color: #888888;
 }
 
 #drivesTabs .button:hover{
@@ -371,7 +384,7 @@ th {
 
 th h5 {
   font-family: 'Anton', sans-serif;
-  font-size: 1.25em;
+  font-size: 1.75em;
   margin-bottom: 0;
 }
 
@@ -391,7 +404,7 @@ th h5 {
 
 .driveTitle{
   text-align: center;
-  background-color: #bbbbbb;
+  background-color: #888888;
   color: white;
   font-family: 'Anton', sans-serif;
   font-size: 2em;
@@ -400,7 +413,7 @@ th h5 {
 
 .driveStart {
   text-align: center;
-  background-color: #bbbbbb;
+  background-color: #888888;
   color: white;
   font-family: 'Anton', sans-serif;
   font-size: 1.75em;
@@ -408,7 +421,7 @@ th h5 {
 }
 
 .driveRegister {
-  background-color: #bbbbbb;
+  background-color: #888888;
   color: white;
   border: 4px solid white;
 }
@@ -482,31 +495,155 @@ th h5 {
   cursor: pointer;
 }
 
-#shareButton:hover {
-  background-color: #bbbbbb;
-}
-
 .userSubmitted {
   padding: 15px;
+  width: 80%;
+  margin: 0 auto;
 }
 
-#userStory {
+.storiesBox {
+  margin: auto;
+  width: 80%;
+}
+
+.userStory {
   background-color: #e52b50;
   color: white;
-  width: 300px;
+  width: 33%;
   padding: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
-#userStory h3{
+.userStory h3{
   text-decoration: underline;
 }
 
-#userStory a {
+.userStory a {
   color: white;
 }
 
-#userStory a:hover{
-  color: #bbbbbb;
+#storiesLoad {
+  font-family: 'Oxygen', sans-serif;
+  color: black;
+  text-align: center;
+  display: block;
+}
+
+.lightBox {
+  color: white;
+  background-color: #e52b50;
+  width: 60%;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+}
+
+.lightBox a {
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 2em;
+}
+
+.shareStory {
+  background: white;
+  color: #e52b50;
+  font-family: 'Anton', sans-serif;
+  border-radius: 25px;
+  font-size: 1.5em;
+  padding: 15px 40px;
+  cursor: pointer;
+}
+
+#forgotPassword {
+  color: #e52b50;
+  font-family: 'Oxygen', sans-serif;
+}
+
+#submitButton, #regButton, #loginButton, #editButton {
+  border-radius: 25px;
+  background-color: #e52b50;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2em;
+  padding: 5px 30px;
+  cursor: pointer;
+}
+
+label {
+  font-family: 'Anton', sans-serif;
+  color: #e52b50;
+  font-size: 1.5em;
+}
+
+#contactForm {
+  margin-top: 25px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.field {
+  padding: 5px;
+}
+
+[type='text'], [type='password'], [type='tel'], [type='email'] {
+  background-color: #dddddd;
+}
+
+#beAHero {
+  color: white;
+  background-color: #e52b50;
+  font-family: 'Anton', sans-serif;
+  border-radius: 25px;
+  font-size: 2em;
+  padding: 15px;
+  cursor: pointer;
+}
+
+#healthCardSection {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+#forgottenEmail {
+  width: 100%;
+}
+
+.headerVideo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.headerVideo img {
+  height: 200px;
+}
+
+.profilePic {
+  padding: 40px;
+  background-color: #888888;
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  text-align: center;
+  float: left;
+}
+
+#profileForm {
+  display: inline;
+}
+
+#profileContainer {
+  width: 60%;
+}
+
+.yourDrives h3 {
+  margin-top: 20px;
+  background-color: #e52b50;
+  color: white;
+  text-align: center;
 }
 
 /*Tablet*/

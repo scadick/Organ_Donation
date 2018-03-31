@@ -15,7 +15,7 @@
     <header class="grid-x">
       <div class="small-3 cell float-right small-offset-9">
         <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
-          <h3 class="title-bar-title" id="menuHeader">BE A HERO</h3>
+          <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration"><h3 class="title-bar-title" id="menuHeader">BE A HERO</h3></a>
           <button class="menu-icon" type="button" data-toggle="mainNav">
           </button>
         </div>
@@ -28,7 +28,7 @@
             <li><a href="stories.html">Stories</a></li>
             <li><a href="login.html">Log In/Sign Up</a></li>
             <li><a href="#">Your Profile</a></li>
-            <li><a href="#">BE A HERO</a></li>
+            <li><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration">BE A HERO</a></li>
           </ul>
           <div id="ribbon"></div>
         </nav>
@@ -36,8 +36,43 @@
     </header>
   <section id="mainContent">
     <h3 class="small-12 cell pageTitles">YOUR PROFILE</h3>
-
+    <div class="grid-container" id="profileContainer">
+      <div class="profile">
+      <h3 class="profilePic">Profile Picture</h3>
+      <form id="profileForm">
+        <div class="grid-x">
+          <div class="small-12 medium-6 cell field">
+           <label>FIRST NAME</label>
+           <input type="text" name="firstName">
+          </div>
+          <div class="small-12 medium-6 cell field">
+           <label>LAST NAME</label>
+           <input type="text" name="lastName">
+          </div>
+          <div class="small-12 medium-6 cell field">
+           <label>USERNAME</label>
+           <input type="text" name="username" value="">
+          </div>
+          <div class="small-12 cell medium-6 cell field">
+           <label>EMAIL</label>
+           <input type="email" name="email">
+          </div>
+          <div class="small-12 medium-6 cell field">
+           <label>POSTAL CODE</label>
+           <input type="text" name="postalCode">
+          </div>
+          <div class="small-12 medium-6 cell field">
+           <label>PHONE NUMBER</label>
+           <input type="tel" name="phone">
+          </div>
+          <input type="submit" name="submit" value="EDIT" id="editButton">
+        </div>
+      </form>
     </div>
+    <div class="yourDrives">
+      <h3>YOUR DRIVES</h3>
+    </div>
+  </div>
   </section>
 
   <footer class="grid-x">
