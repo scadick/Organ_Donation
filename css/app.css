@@ -583,6 +583,7 @@ th h5 {
 
 #editButton{
   clear: both;
+  margin-top: 15px;
 }
 
 label {
@@ -650,7 +651,6 @@ label {
   color: white;
   font-family: 'Oxygen', sans-serif;
   text-align: center;
-  margin: 0 auto;
   float: left;
 }
 
@@ -662,13 +662,14 @@ label {
   width: 60%;
 }
 
-.yourDrives h4 {
+.yourDrives h3 {
   margin-top: 20px;
   background-color: #e52b50;
   color: white;
   text-align: center;
   display: inline-block;
   padding: 15px;
+  width: 100%;
 }
 
 .yourDrives a {
@@ -689,24 +690,34 @@ label {
   font-size: 1.25em;
 }
 
+.picCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #888888;
+  float: left;
+}
+
 .personalInfo {
   margin-left: 15px;
+  padding: 5px;
   background-color: #888888;
+  overflow: hidden;
+  margin-top: 10px;
 }
 
-.personClass {
+
+.personalInfo h4{
   color: #e52b50;
-  background-color: #888888;
   margin-right: 10px;
+  background-color: #888888;
+  padding: 0 5px;
+  width: 50%;
   border-right: 5px solid #e52b50;
-  display: inline;
-}
-
-.personalInfo h3{
-  color: #e52b50;
-  margin-right: 10px;
-  padding: 0 15px;
-  display: inline;
+  float: left;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 .personalInfo p{
@@ -714,15 +725,15 @@ label {
   background-color: #888888;
   font-size: 1.25em;
   display: inline;
+  float: right;
+  text-align: left;
+  width: 45%;
+  margin-right: 10px;
+  padding-top: 5px;
 }
 
 .centerSubmit {
   text-align: center;
-}
-
-#editButton {
-  margin-top: 25px;
-  margin-bottom: 25px;
 }
 
 /*Tablet*/
