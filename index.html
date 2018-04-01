@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 </head>
 <body>
+  <section class="headerBckgrd">
+  </section>
   <header class="grid-x">
     <div class="small-3 cell float-right small-offset-9">
       <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
@@ -33,20 +35,34 @@
       </nav>
     </div>
   </header>
-
   <section class="headerVideo">
     <img src="images/red-logo.svg" alt="red logo">
-    <h4>PUT YOUR HEART INTO IT.</h4>
+    <h4>PUT YOUR <span id="heart">HEART</span> INTO IT.</h4>
     <h2>BE A HERO</h2>
     <h1>BE A DONOR</h1>
+    <div class="playButton">
+      <div class="playCircle">
+        <div class="playTriangle">
+        </div>
+      </div>
+      <h3>PLAY VIDEO</h3>
+    </div>
   </section>
+  <div class="videoBox">
+    <section class="lightBox">
+      <a class="float-right">X</a>
+      <video>
+        <source src="videos/typography.mp4" controls type="video/mp4">
+      </video>
+    </section>
+  </div>
 
   <section>
     <div class="grid-container" id="healthCardSection">
     <h3>HAVE YOUR HEALTH CARD READY.</h3><br>
     <img src="images/healthcard.png" alt="health card"><br><br>
     <p>Registering takes no time all!<br>We just need some basic information and your Health Card number.</p><br>
-    <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration"><button type="button" id="beAHero">BE A HERO</button></a>
+    <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" id="beAHero">BE A HERO</a>
     </div>
   </section>
 
@@ -79,5 +95,6 @@
   <script src="js/vendor/what-input.js"></script>
   <script src="js/vendor/foundation.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/video.js"></script>
 </body>
 </html>

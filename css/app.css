@@ -620,15 +620,19 @@ label {
   color: white;
   background-color: #e52b50;
   font-family: 'Anton', sans-serif;
-  border-radius: 25px;
+  border-radius: 45px;
   font-size: 2em;
-  padding: 15px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
 #healthCardSection {
   text-align: center;
   margin-bottom: 45px;
+}
+
+#healthCardSection h3 {
+  padding-top: 20px;
 }
 
 #forgottenEmail {
@@ -638,10 +642,29 @@ label {
 .headerVideo {
   text-align: center;
   margin-bottom: 20px;
+  color: white;
+}
+
+.headerBckgrd {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  height: 95%;
+  width: 100%;
+  background-image: url('../images/organ-gif.gif');
+  background-position: center;
+  filter: brightness(.5);
+  background-color: #888888;
+}
+
+#heart {
+  color: #e52b50;
 }
 
 .headerVideo img {
   height: 200px;
+  margin-bottom: 20px;
 }
 
 .profilePic {
@@ -734,6 +757,51 @@ label {
 
 .centerSubmit {
   text-align: center;
+}
+
+.playCircle {
+  float: left;
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 5px solid #e52b50;
+}
+
+.playTriangle {
+  margin-left: 30px;
+  margin-top: 10px;
+  border: 35px solid transparent;
+  border-left: 50px solid #e52b50;
+  width: 0;
+  height: 0;
+}
+
+.playButton {
+  cursor: pointer;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.playButton h3 {
+  margin-left: 15px;
+  margin-top: 25px;
+  float: right;
+  color: #e52b50;
+}
+
+.videoBox .lightBox {
+  background-color: #e52b50;
+  padding: 15px 10px 15px 15px;
+  width: 80%;
+  height: 80%;
+  color: white;
+}
+
+.videoBox .lightBox video {
+  margin-top: 50px;
+  width: 95%;
+  height: 95%;
 }
 
 /*Tablet*/
