@@ -19,9 +19,21 @@ table tbody td {
   padding: 0;
 }
 
+.headerIcons {
+  text-align: center;
+}
+
+.headerIcons button {
+  float: left;
+}
+
+.title-bar .menu-icon{
+  text-align: center;
+}
+
 .menu-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 .menu-icon::after {
@@ -32,8 +44,22 @@ table tbody td {
 }
 
 .menu-icon:hover::after {
-  background: #cacaca;
-  box-shadow: 0 12px 0 #cacaca, 0 24px 0 #cacaca;
+  background: #888888;
+  box-shadow: 0 12px 0 #888888, 0 24px 0 #888888;
+}
+
+.logMenu::after{
+  width: 60px;
+  margin-top: 5px;
+  background: #e52b50;
+   box-shadow: 0 12px 0 #e52b50, 0 24px 0 #e52b50;
+   -webkit-box-shadow: 0 20px 0 #e52b50, 0 40px 0 #e52b50;
+   height: 12px;
+}
+
+.logMenu:hover::after{
+  background: #888888;
+  box-shadow: 0 20px 0 #888888, 0 40px 0 #888888;
 }
 
 #closeButton {
@@ -52,6 +78,15 @@ table tbody td {
 #hamMenu {
   display: block !important;
   background: none;
+}
+
+.profileImg {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #e52b50;
+  margin-right: 15px;
+  float: left;
 }
 
 #mainNav{
@@ -389,6 +424,28 @@ th h5 {
   margin-bottom: 0;
 }
 
+.searchBar {
+  background-color: #888888;
+  height: 40px;
+}
+
+.searchBar img{
+  height: 40px;
+  width: 40px;
+  margin: 0 auto;
+  float: left;
+  padding: 5px;
+}
+
+.searchBar p{
+  color: white;
+  padding: 5px;
+  margin-left: 15px;
+  font-size: 1.5em;
+  margin: 0 auto;
+  float: left;
+}
+
 .driveInfo {
   display: inline-block;
 }
@@ -469,6 +526,22 @@ th h5 {
   color: #e52b50;
 }
 
+#circles {
+  text-align: center;
+}
+
+#circles a{
+  color: #dddddd;
+  border-radius: 50%;
+  background-color: #dddddd;
+}
+
+#circles .active{
+  color: #888888;
+  border-radius: 50%;
+  background-color: #888888;
+}
+
 .mainStory {
   background-color: #e52b50;
   color: white;
@@ -500,6 +573,7 @@ th h5 {
   padding: 15px;
   width: 80%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .storiesBox {
@@ -510,18 +584,32 @@ th h5 {
 .userStory {
   background-color: #e52b50;
   color: white;
-  width: 33%;
+  width: 32%;
   padding: 10px;
   display: inline-block;
   margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+.userStoryPic {
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .userStory h3{
-  text-decoration: underline;
+  text-align: center;
+  margin: 0 auto;
+  border-bottom: 2px solid white;
+  width: 75%;
+  margin-bottom: 15px;
 }
 
 .userStory a {
   color: white;
+  float: right;
 }
 
 #storiesLoad {
@@ -570,20 +658,27 @@ th h5 {
   font-family: 'Oxygen', sans-serif;
 }
 
-#submitButton, #regButton, #loginButton, #editButton {
+#submitButton, #regButton, #loginButton, #editButton, #signOut {
   border-radius: 25px;
   background-color: #e52b50;
   color: white;
   text-align: center;
   margin: 0 auto;
   font-size: 2em;
-  padding: 5px 30px;
+  padding: 10px 30px;
   cursor: pointer;
+  font-family: 'Anton', sans-serif;
 }
 
 #editButton{
   clear: both;
   margin-top: 15px;
+}
+
+#signOut {
+  margin-right: 45px;
+  margin-top: 15px;
+  padding: 10px 30px;
 }
 
 label {
@@ -602,15 +697,7 @@ label {
   padding: 5px;
 }
 
-.field1 input {
-  width: 75%;
-  float: right;
-}
 
-.field1 label {
-  float: left;
-  width: 25%;
-}
 
 [type='text'], [type='password'], [type='tel'], [type='email'] {
   background-color: #dddddd;
@@ -679,7 +766,27 @@ label {
 
 #profileForm {
   display: inline;
+  margin: 0 auto;
 }
+
+#profileForm .pic {
+  padding: 40px;
+  background-color: #888888;
+  border-radius: 50%;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  text-align: center;
+  width: 75%;
+  height: 300px;
+  clear: both;
+}
+
+.pic label{
+  margin-bottom: 45px;
+  font-size: 1.5em;
+  color: white;
+}
+
 
 #profileContainer {
   width: 60%;
@@ -690,7 +797,7 @@ label {
   background-color: #e52b50;
   color: white;
   text-align: center;
-  display: inline-block;
+  display: block;
   padding: 15px;
   width: 100%;
 }
@@ -802,6 +909,30 @@ label {
   margin-top: 50px;
   width: 95%;
   height: 95%;
+}
+
+.arrowRight {
+  border: solid white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 25px;
+  margin-top: 25px;
+  float: right;
+}
+
+.arrowLeft {
+  border: solid white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 20px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-left: 25px;
+  margin-top: 25px;
+  float: left;
 }
 
 /*Tablet*/

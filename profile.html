@@ -14,10 +14,13 @@
 
     <header class="grid-x">
       <div class="small-3 cell float-right small-offset-9">
-        <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
-          <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration"><h3 class="title-bar-title" id="menuHeader">BE A HERO</h3></a>
-          <button class="menu-icon" type="button" data-toggle="mainNav">
-          </button>
+        <div class="headerIcons">
+          <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
+            <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration"><h3 class="hide title-bar-title" id="menuHeader">BE A HERO</h3></a>
+            <div class="profileImg"></div>
+          <!--make class-->  <button class="menu-icon logMenu" type="button" data-toggle="mainNav">
+            </button>
+        </div>
         </div>
         <nav id="mainNav" class="top-bar" data-closable>
           <button id="closeButton" class="close-button" aria-label="Close menu" type="button" data-close><span aria-hidden="true">&times;</span></button>
@@ -26,7 +29,7 @@
             <li><a href="about.html">About</a></li>
             <li><a href="drives.html">Donor Drives</a></li>
             <li><a href="stories.html">Stories</a></li>
-            <li><a href="login.html">Log In/Sign Up</a></li>
+            <li><a href="account.html">Log In/Sign Up</a></li>
             <li><a href="#">Your Profile</a></li>
             <li><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration">BE A HERO</a></li>
           </ul>
@@ -35,38 +38,44 @@
       </div>
     </header>
   <section id="mainContent">
+    <button type="button" id="signOut" class="float-right">SIGN OUT</button>
     <h3 class="small-12 cell pageTitles">YOUR PROFILE</h3>
     <div class="grid-container" id="profileContainer">
       <div class="profile">
         <div class="grid-x">
-            <h3 class="profilePic float-left small-5 cell">Profile Picture</h3>
-      <!--<form id="profileForm" class="small-6 cell">
-          <div class="field">
+            <!--<h3 class="profilePic float-left small-5 cell">Profile Picture</h3>-->
+      <form id="profileForm" class="">
+          <div class="field small-12 medium-6 cell">
            <label>FIRST NAME</label>
            <input type="text" name="firstName">
           </div>
-          <div class="field">
+          <div class="field small-12 medium-6 cell">
            <label>LAST NAME</label>
            <input type="text" name="lastName">
           </div>
-          <div class="field">
+          <div class="field small-12 medium-6 cell">
            <label>USERNAME</label>
            <input type="text" name="username" value="">
           </div>
-          <div class="field">
+          <div class="field pic small-12 medium-6 cell">
+          <label>PROFILE PICTURE</label>
+          <input type="file" name="image">
+          </div>
+          <div class="field small-12 medium-6 cell">
            <label>EMAIL</label>
            <input type="email" name="email">
           </div>
-          <div class="field">
+          <div class="field small-12 medium-6 cell">
            <label>POSTAL CODE</label>
            <input type="text" name="postalCode">
           </div>
-          <div class="field">
+          <div class="field small-12 medium-6 cell">
            <label>PHONE NUMBER</label>
            <input type="tel" name="phone">
           </div>
-      </form>-->
-      <div class="small-7 cell">
+            <button type="button" id="editButton" class="float-center">EDIT</button>
+      </form>
+      <!--<div class="small-7 cell">
         <div class="personalInfo">
             <h4>FIRST NAME</h4>
             <p>Holly</p>
@@ -91,8 +100,7 @@
             <h4>PHONE</h4>
             <p>123-456-7890</p>
         </div>
-      </div>
-      <input type="submit" name="submit" value="EDIT" id="editButton" class="float-center">
+      </div>-->
       </div>
     </div>
     <div class="yourDrives">
