@@ -474,6 +474,7 @@ footer h3 {
   font-family: 'Anton', sans-serif;
  }
 
+
  .createDrive {
   margin: 0 auto;
  }
@@ -808,7 +809,7 @@ th:nth-child(2) {
   color: black;
   text-align: center;
   display: block;
-}
+
 
 .lightbox {
   position: absolute;
@@ -1150,7 +1151,7 @@ label {
   height: 90%;
   max-height: 720px;
   margin: 0 5%;
-}
+
 
 /*Tablet*/
 @media screen and (min-width: 40em) {
