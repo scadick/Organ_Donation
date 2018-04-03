@@ -85,7 +85,7 @@
     <section class="lightbox">
       <div class="videoPlayer">
         <a class="float-right close-lightbox">X</a>
-        <video>
+        <video controls>
           <source src="videos/typography.mp4" controls type="video/mp4">
         </video>
       </div>

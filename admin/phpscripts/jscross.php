@@ -26,21 +26,53 @@
         $col = "drive_approval";
         $id = "\"yes\"";
         $getFiles = getSingle($tbl, $col, $id);
+    }else if(isset($_GET['details'])){
+        $tbl = "tbl_drive";
+        $getFiles = getAll($tbl);
+    }else if(isset($_GET['reg'])){
+        GOTO('Location: https://www.ontario.ca/page/organ-and-tissue-donor-registration');
+        $tbl = "tbl_drive";
+        $col = "drive_title";
+        $id = $_GET['reg'];
+        $getFile = getSingle($tbl, $col, $id);
+        $grpResultR = "[";
+
+        while($fileResultR = mysqli_fetch_assoc($getFile)) {
+            $jsonResultR = json_encode($fileResultR);
+            $grpResultR .= $jsonResultR.",";
+        }
+
+        $grpResultR = substr($grpResultR, 0, -1);
+
+        $grpResultR .= "]";
     }
 
-    $grpResult = "";
+    /*if(isset($_GET['reg']) {
+        $grpResultR = "[";
 
-    echo "[";
+        while($fileResultR = mysqli_fetch_assoc($getFile)) {
+            $jsonResultR = json_encode($fileResultR);
+            $grpResultR .= $jsonResultR.",";
+        }
 
-	while($fileResult = mysqli_fetch_assoc($getFiles)) {
-        $jsonResult = json_encode($fileResult);
-        $grpResult .= $jsonResult.",";
-    }
+        $grpResultR = substr($grpResultR, 0, -1);
 
-	echo substr($grpResult, 0, -1);
+        $grpResultR .= "]";
+    } else {*/
+        $grpResult = "";
 
-    echo "]";
-	
+        echo "[";
+
+        while($fileResult = mysqli_fetch_assoc($getFiles)) {
+            $jsonResult = json_encode($fileResult);
+            $grpResult .= $jsonResult.",";
+        }
+
+        echo substr($grpResult, 0, -1);
+
+        echo "]";
+    
+    //}
 	mysqli_close($link);
 
 ?>

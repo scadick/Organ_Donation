@@ -19,6 +19,21 @@
   $drives = filterType($tbl, $tbl2, $tbl3, $col, $col2, $col3, $filter);
   $message = $drives;
 
+  if(isset($_POST['submit'])) {
+    $title = ($_POST['title']);
+    $location = ($_POST['citys']);
+    $goal = ($_POST['goal']);
+    $desc = ($_POST['about']);
+    $type = ($_POST['type']);
+      if(empty($type)){
+        $message = "Please enter a location";
+        echo $message;
+      }else{
+        $result = createDrive($title, $location, $goal, $desc, $type, $location);
+        $message = $result;
+        echo $message;
+      }
+	}
 ?>
 
 <!doctype html>
@@ -77,33 +92,44 @@
           <p class="small-12 cell" id="req">*All fields are required</p>
           <div class="createDrive">
             <div class="grid-container">
-              <div class="button-group stacked-for-small expanded small-12 cell" id="drivesTabs1">
-                <a class="button">ORGANIZATIONAL DRIVES</a>
-                <a class="button">INDIVIDUAL DRIVES</a>
-              </div>
 
                 <form id="driveCreate" action="drivesinfo.php" method="post">
+                    <!--<div class="button-group stacked-for-small expanded small-12 cell" id="drivesTabs1">
+                      <input type="button" value="ORGANIZATIONAL DRIVES" class="button" name="type">
+                      <input type="button" value="INDIVIDUAL DRIVES" class="button" name="type2">
+                    </div>-->
+                    <label>TYPE</label>
+                    <select name="type" required>
+                      <option value=""></option>
+                      <option value="org">ORGANIZATIONAL DRIVE</option>
+                      <option value="individ">INDIVIDUAL DRIVE</option>
+                    </select>
+
                     <label>DRIVE PICTURE</label>
-                    <input type="file" name="cover" value="" required>
+                    <input type="file" name="cover" value="">
 
                     <label>DRIVE TITLE</label>
-                    <input type="text" required>
+                    <input type="text" name="title" required value=" <?php if(!empty($title)){ echo $title;} ?>">
 
                     <label>CITY</label>
                     <select name="citys" required>
-                      <option value="LONDON">LONDON</option>
-                      <option value="LUCAN">LUCAN</option>
-                      <option value="ILDERTON">ILDERTON</option>
-                      <option value="SARNIA">SARNIA</option>
+                      <option value=""></option>
+                      <?php
+                      $tblL = "tbl_location";
+                      $locations = getAll($tbl);
+                      while($row3 = mysqli_fetch_array($locations)) {
+                        echo "<option value=\"{$row3['location_code']}\">{$row3['location_name']}</option>";
+                      }
+                      ?>
                     </select>
 
                     <label>DRIVE GOAL</label>
-                    <input type="text" required>
+                    <input type="text" name="goal" required value=" <?php if(!empty($goal)){ echo $goal;} ?>">
 
                     <label>DRIVE ABOUT</label>
-                    <textarea name="about" required cols="50" rows="8"></textarea>
+                    <textarea name="about" required cols="50" rows="8"><?php if(!empty($title)){ echo $title;} ?></textarea>
 
-                    <button type="button" id="startDrive">SUBMIT</button>
+                    <button type="submit" id="startDrive" name="submit">SUBMIT</button>
             </form>
         </div>
         <h3 class="small-12 medium-4 cell pageTitles">YOUR DRIVES</h3>
@@ -180,7 +206,7 @@
     <h4>UofT Gift of Life</h4>
     <p>London<br>Start Date: Nov. 28, 2017<br>5887 Total Registrations | Goal of 1000<br></p>
     <p>This is the drive description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in eleifend dolor. Fusce lorem nunc, finibus at lobortis a, viverra in risus. Nunc dictum velit vitae quam viverra tempus. Nam scelerisque massa ut cursus pharetra. Morbi mollis sapien nec facilisis rutrum. Cras gravida, felis ac lobortis ornare, mi ipsum commodo est, non tempor lectus tortor a velit. Nunc in accumsan arcu.</p>
-    <button type="button" class="supportCause">SUPPORT THE CAUSE</button>
+    <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" class="supportCause">SUPPORT THE CAUSE</a>
   </section>
 </div>
 
@@ -215,5 +241,6 @@
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
     <script src="js/drives.js"></script>
+    <script src="js/drivesinfo.js"></script>
   </body>
 </html>

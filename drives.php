@@ -11,6 +11,12 @@
 
   $drives = filterType($tbl, $tbl2, $tbl3, $col, $col2, $col3, $filter);
   $message = $drives;
+
+  if(isset($_POST['reg'])) {
+      $html = new simple_html_dom();
+      $drive = $html->find('div.driveDetails');
+      echo $drive;
+	}
 ?>
 
 <!doctype html>

@@ -2,6 +2,7 @@
 
 	function createUser($fname, $lname, $username, $password, $email, $phone, $shortCode, $code) {
 		include('connect.php');
+		date_default_timezone_set("America/Toronto");
 		$password = password_hash($password, PASSWORD_DEFAULT);
 		if(empty($phone)){
 			$userString = "INSERT INTO tbl_user VALUES(NULL, '{$fname}', '{$lname}', '{$username}', '{$password}', NULL, '{$email}', NULL, '{$code}', CURRENT_TIMESTAMP, 'Member', 'yes')";
