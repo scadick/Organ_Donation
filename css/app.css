@@ -474,7 +474,6 @@ footer h3 {
   font-family: 'Anton', sans-serif;
  }
 
-
  .createDrive {
   margin: 0 auto;
  }
@@ -809,7 +808,7 @@ th:nth-child(2) {
   color: black;
   text-align: center;
   display: block;
-
+}
 
 .lightbox {
   position: absolute;
@@ -856,6 +855,12 @@ th:nth-child(2) {
   font-size: 1.5em;
   padding: 15px 40px;
   cursor: pointer;
+}
+
+.supportCause {
+  color: #e52b50 !important;
+  font-family: 'Anton', sans-serif !important;
+  margin: 20px;
 }
 
 #forgotPassword {
@@ -1151,7 +1156,7 @@ label {
   height: 90%;
   max-height: 720px;
   margin: 0 5%;
-
+}
 
 /*Tablet*/
 @media screen and (min-width: 40em) {

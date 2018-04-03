@@ -4,8 +4,8 @@
     // Drives Page
 
     //Drives Type
-    var tabsBar = document.querySelector("#drivesTabs");
-    var Dtabs = tabsBar.querySelectorAll("a");
+    var tabsBar = document.querySelector("#drivesTabs1");
+    var Dtabs = tabsBar.querySelectorAll("input");
     var Dtabactive;
 
     function driveType(e, index) {
@@ -135,16 +135,26 @@
     var box = document.querySelector("#driveDetails");
 
     function lightbox(e) {
-        var target = e.currentTarget;
-        var title;
+        let target = e.currentTarget;
+        let title;
         if (target.classList.contains("driveTitle")) {
             title = target.querySelector("a");
-            title = "'" + title.innerHTML + "'";
+            title = "\"" + title.innerHTML + "\"";
         } else {
             title = target.querySelector("img");
-            title = "'" + title.alt + "'";
+            title = "\"" + title.alt + "\"";
         }
         console.log(title);
+        /*circles.forEach(function(element, index) {
+            if (index == e.currentTarget.id){
+                circles[index].classList.add("active");
+                activeCircle.classList.remove("active");
+                activeCircle = circles[index];
+                title.innerHTML = titles[index];
+                desc.innerHTML = texts[index];
+                video.src = srcs[index];
+             }
+        });*/
         const httpRequest = new XMLHttpRequest();
         //1. make an AJAX call to the databse; handle any errors first
         if (!httpRequest) {
@@ -179,43 +189,4 @@
     driveToggleImg.forEach(function(element, index) {
         element.addEventListener('click', lightbox, false);
     });
-
-    //regs add
-    /*var regButton = document.querySelector(".supportCause");
-
-    function regAdd(e) {
-        let target = e.currentTarget.parentElement;
-        let title = target.querySelector("h4").innerHTML;
-        title = "'" + title + "'";
-
-        const httpRequest = new XMLHttpRequest();
-        //1. make an AJAX call to the databse; handle any errors first
-        if (!httpRequest) {
-          alert('giving up, your browser sucks!');
-          return false;
-        }
-    
-        httpRequest.onreadystatechange = processRequest;
-        httpRequest.open('GET', 'admin/phpscripts/jscross.php?reg=' + title);
-        httpRequest.send();
-    
-        function processRequest() {
-            // handle the stages of our AJAX call
-            let reqIndicator = document.querySelector('.request-state');
-            reqIndicator.textContent = httpRequest.readyState;
-        
-            if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {// request worked, all is good
-                let data = JSON.parse(httpRequest.responseText);
-                console.log(data);
-                processResultReg(data, count);
-            } else {
-                alert('There was a problem with the request');
-            }
-            }
-        }
-    }
-
-
-    regButton.addEventListener('click', regAdd, false);*/
 })();

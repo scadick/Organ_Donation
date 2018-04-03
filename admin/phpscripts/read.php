@@ -19,9 +19,12 @@
 
 function getSingle($tbl, $col, $id){
 	include('connect.php');
-	$id = "'".$id."'";
+	$start = substr($id, 0, 1);
+	if($start != "'") {
+		$id = "'".$id."'";
+	}	
+	
 	$querySingle = "SELECT * FROM {$tbl} WHERE {$col} = {$id}";
-
 	$runSingle = mysqli_query($link, $querySingle);
 
 	if($runSingle){
