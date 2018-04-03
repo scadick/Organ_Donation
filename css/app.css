@@ -857,6 +857,12 @@ th:nth-child(2) {
   cursor: pointer;
 }
 
+.supportCause {
+  color: #e52b50 !important;
+  font-family: 'Anton', sans-serif !important;
+  margin: 20px;
+}
+
 #forgotPassword {
   color: #e52b50;
   font-family: 'Oxygen', sans-serif;

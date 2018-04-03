@@ -163,7 +163,7 @@
           <h4>UofT Gift of Life</h4>
           <p>London<br>Start Date: Nov. 28, 2017<br>5887 Total Registrations | Goal of 1000<br></p>
           <p>This is the drive description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in eleifend dolor. Fusce lorem nunc, finibus at lobortis a, viverra in risus. Nunc dictum velit vitae quam viverra tempus. Nam scelerisque massa ut cursus pharetra. Morbi mollis sapien nec facilisis rutrum. Cras gravida, felis ac lobortis ornare, mi ipsum commodo est, non tempor lectus tortor a velit. Nunc in accumsan arcu.</p>
-          <button type="button" class="supportCause">SUPPORT THE CAUSE</button>
+          <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" class="supportCause">SUPPORT THE CAUSE</a>
         </div>
       </section>
     </div>
