@@ -1,2 +1,9 @@
-node_modules
+_DS_Store
+_DS_Store(1)
+*.psd
 videos
+.vscode
+assets
+*.psd
+to-do.txt
+admin2

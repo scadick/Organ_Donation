@@ -1,10 +1,16 @@
+<?php
+  require_once('admin/phpscripts/config.php');
+
+?>
+
+
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Be A Hero - About</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
@@ -13,22 +19,47 @@
   <body>
 
   <header class="grid-x">
-    <div class="small-3 cell float-right small-offset-9">
+    <div class="small-12 medium-5 large-3 cell float-right medium-offset-7 large-offset-9">
       <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
-        <h3 class="title-bar-title" id="menuHeader">BE A HERO</h3>
-        <button class="menu-icon" type="button" data-toggle="mainNav">
-        </button>
+        <?php
+          $log;
+          if(isset($_SESSION['user_id'])) {
+            $log = "yes";
+            $tbl = "tbl_user";
+            $col = "user_id";
+            $id = $_SESSION['user_id'];
+            $profile = getSingle($tbl, $col, $id);
+            $row = mysqli_fetch_array($profile);
+            if(is_null($row['user_image'])){
+              echo "<div class=\"profileImg\"></div>";
+            }else{
+              echo "<div class=\"profileImg\">
+              <img class=\"profilePic\" src=\"images/{$row['user_image']}\" alt=\"{$row['user_fname']} {$row['user_lname']}\">
+              </div>";
+            }
+            echo "<button class=\"menu-icon logMenu\" type=\"submit\" data-toggle=\"mainNav\"></button>";
+          } else {
+            echo "<a href=\"https://www.ontario.ca/page/organ-and-tissue-donor-registration\"><h3 class=\"title-bar-title\" id=\"menuHeader\">BE A HERO</h3></a>
+            <button class=\"menu-icon\" type=\"button\" data-toggle=\"mainNav\"></button";
+          }
+        ?>
       </div>
       <nav id="mainNav" class="top-bar" data-closable>
         <button id="closeButton" class="close-button" aria-label="Close menu" type="button" data-close><span aria-hidden="true">&times;</span></button>
         <ul class="vertical menu">
-          <li><a href="index.html">Home Page</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="drives.html">Donor Drives</a></li>
-          <li><a href="stories.html">Stories</a></li>
-          <li><a href="account.html">Log In/Sign Up</a></li>
-          <li><a href="profile.html">Your Profile</a></li>
-          <li><a href="#">BE A HERO</a></li>
+            <li><a href="index.php">Home Page</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="drives.php">Donor Drives</a></li>
+            <li><a href="stories.php">Stories</a></li>
+            <?php
+              if(empty($log)){
+                echo "<li><a href=\"account.php\">Log In/Sign Up</a></li>";
+              }else{
+                echo "<li><a href=\"admin/phpscripts/caller.php?caller_id=logout\">Sign Out</a></li>";
+              }
+            ?>
+            <li><a href="profile.php">Your Profile</a></li>
+            <li><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration">BE A HERO</a></li>
         </ul>
         <div id="ribbon"></div>
       </nav>
@@ -38,13 +69,13 @@
   <section class="grid-container" id="mainContent">
     <h3 class="small-12 medium-4 cell pageTitles">ABOUT ORGAN DONATION</h3>
     <div class="button-group stacked-for-small expanded small-12 cell contentMenu">
-      <a class="button">THE PROCESS</a>
-      <a class="button">THE FACTS</a>
-      <a class="button">THE STATS</a>
-      <a class="button">F.A.Q</a>
+      <a class="button aboutTab aboutActive">THE PROCESS</a>
+      <a class="button aboutTab">THE FACTS</a>
+      <a class="button aboutTab">THE STATS</a>
+      <a class="button aboutTab">F.A.Q</a>
     </div>
     <div class="aboutContent grid-x">
-      <div id="process" class="hide">
+      <div id="process" class="aboutSection">
         <h3>THE PROCESS</h3>
         <div class="arrowRight"></div>
         <div class="arrowLeft"></div>
@@ -58,8 +89,9 @@
             <li><a href="#">5</a></li>
           </ul>
         </div>
+     </div>
       </div>
-      <div id="facts" >
+      <div id="facts" class="hide aboutSection">
         <h3>THE FACTS</h3>
         <div class="small-12 cell float-left" id="donation">
           <h4>DONATION</h4>
@@ -70,8 +102,8 @@
           <p>- Donor registration is confidential and will not impact one’s medical care. Registration status is only accessed at end-of-life to share a person’s donation wishes with their family.<br><br>- Donor registration gives families clear evidence of their loved one’s donation decision. It relieves families of the burden of making a donation decision on their loved one’s behalf at a difficult time.<br><br>- Anyone over the age of 16 can register. People of all ages and medical histories should consider themselves potential donors.<br><br>- One can easily change or withdraw their donor registration at any time.<br><br>- Even if a person has signed a donor card, they still need to register by clicking Register or by visiting a ServiceOntario centre. Donor cards are no longer used in Ontario.<br><br>- Donation in Ontario is managed by Trillium Gift of Life Network, a not-for-profit agency of the Ontario government.</p>
         </div>
       </div>
-
-      <div id="stats" class="small-12 cell">
+      
+      <div id="stats" class="hide small-12 cell aboutSection">
         <div class="whiteBckgrd">
           <img src="images/left-heart.svg" alt="left heart" class="float-left leftHeart">
           <h3>32% of Ontarians are registered donors.</h3>
@@ -91,8 +123,7 @@
         </div>
         <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration" class="beAHero">BE A HERO</a>
       </div>
-
-      <div id="faq" class="hide">
+      <div id="faq" class="hide aboutSection">
         <h3>F.A.Q</h3>
         <ul class="vertical menu accordion-menu float-left" data-accordion-menu>
           <li><a>WHAT ORGANS AND TISSUE CAN BE DONATED?</a>
@@ -150,7 +181,7 @@
   <footer class="grid-x">
     <div class="small-6 cell" id="contact">
     <h3>CONTACT</h3>
-      <P>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p>
+    <div class="textCenter"><p>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p></div>
     </div>
     <div class="small-6 cell">
       <div id="sM">
@@ -177,5 +208,6 @@
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/about.js"></script>
   </body>
 </html>

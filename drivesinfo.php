@@ -1,3 +1,26 @@
+<?php
+  require_once('admin/phpscripts/config.php');
+  confirm_logged_in();
+
+  $tbl1 = "tbl_user";
+  $col1 = "user_id";
+  $id = $_SESSION['user_id'];
+  $profile = getSingle($tbl1, $col1, $id);
+  $rows = mysqli_fetch_array($profile);
+
+  $tbl = "tbl_location";
+  $tbl2 = "tbl_drive";
+  $tbl3 = "tbl_drive_user_loc";
+  $col = "location_id";
+  $col2 = "drive_id";
+  $col3 = "drive_type";
+  $filter = "org";
+
+  $drives = filterType($tbl, $tbl2, $tbl3, $col, $col2, $col3, $filter);
+  $message = $drives;
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
@@ -13,21 +36,28 @@
   <body>
 
     <header class="grid-x">
-      <div class="small-3 cell float-right small-offset-9">
+      <div class="small-12 medium-5 large-3 cell float-right medium-offset-7 large-offset-9">
         <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
-          <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration"><h3 class="title-bar-title" id="menuHeader">BE A HERO</h3></a>
-          <button class="menu-icon" type="button" data-toggle="mainNav">
-          </button>
+          <?php
+            if(is_null($rows['user_image'])){
+              echo "<div class=\"profileImg\"></div>";
+            }else{
+              echo "<div class=\"profileImg\">
+              <img class=\"profilePic\" src=\"images/{$rows['user_image']}\" alt=\"{$rows['user_fname']} {$rows['user_lname']}\">
+              </div>";
+            }
+            echo "<button class=\"menu-icon logMenu\" type=\"submit\" data-toggle=\"mainNav\"></button>";
+          ?>
         </div>
         <nav id="mainNav" class="top-bar" data-closable>
           <button id="closeButton" class="close-button" aria-label="Close menu" type="button" data-close><span aria-hidden="true">&times;</span></button>
           <ul class="vertical menu">
-            <li><a href="index.html">Home Page</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Donor Drives</a></li>
-            <li><a href="stories.html">Stories</a></li>
-            <li><a href="account.html">Log In/Sign Up</a></li>
-            <li><a href="profile.html">Your Profile</a></li>
+          <li><a href="index.php">Home Page</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="drives.php">Donor Drives</a></li>
+            <li><a href="stories.php">Stories</a></li>
+            <li><a href="admin/phpscripts/caller.php?caller_id=logout">Sign Out</a></li>
+            <li><a href="profile.php">Your Profile</a></li>
             <li><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration">BE A HERO</a></li>
           </ul>
           <div id="ribbon"></div>
@@ -46,13 +76,13 @@
           <h3 class="small-12 medium-4 cell pageTitles">CREATE A DRIVE</h3>
           <p class="small-12 cell" id="req">*All fields are required</p>
           <div class="createDrive">
-          <div class="grid-container">
-          <div class="button-group stacked-for-small expanded small-12 cell" id="drivesTabs1">
-            <a class="button">ORGANIZATIONAL DRIVES</a>
-            <a class="button">INDIVIDUAL DRIVES</a>
-          </div>
+            <div class="grid-container">
+              <div class="button-group stacked-for-small expanded small-12 cell" id="drivesTabs1">
+                <a class="button">ORGANIZATIONAL DRIVES</a>
+                <a class="button">INDIVIDUAL DRIVES</a>
+              </div>
 
-          <form id="driveCreate" action="form.php" method="post">
+                <form id="driveCreate" action="drivesinfo.php" method="post">
                     <label>DRIVE PICTURE</label>
                     <input type="file" name="cover" value="" required>
 
@@ -75,17 +105,17 @@
 
                     <button type="button" id="startDrive">SUBMIT</button>
             </form>
-          </div>
+        </div>
         <h3 class="small-12 medium-4 cell pageTitles">YOUR DRIVES</h3>
         <div class="grid-container">
         <div class="button-group stacked-for-small expanded small-12 cell" id="drivesTabs">
-          <a class="button">ORGANIZATIONAL DRIVES</a>
-          <a class="button">INDIVIDUAL DRIVES</a>
-        </div>
-        <div class="searchBar">
+              <a class="driveTypeActive button">ORGANIZATIONAL DRIVES</a>
+              <a class="button">INDIVIDUAL DRIVES</a>
+            </div>
+        <!--<div class="searchBar">
           <img src="images/search-icon.png" alt="search icon">
           <p id="search">Search</p>
-        </div>
+        </div>-->
           <table class="small-12 cell unstriped">
             <thead>
               <tr class="driveTitles">
@@ -96,29 +126,45 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="driveImage"><img src="images/uot.png" alt="U of T"></td>
-                <td class="driveTitle">UofT Gift Of Life</td>
-                <td class="driveStart">NOV.28,2013</td>
-                <td class="driveRegister">
-                  <h4 class="driveMonth">THIS MONTH</h4>
-                  <h4 class="monthNum">2</h4>
-                  <h4 class="driveTotal">TOTAL</h4>
-                  <h4 class="totalNum">5887</h4>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="row small-12 cell">
-          <div class="columns">
-            <ul class="pagination text-center" role="navigation" aria-label="Pagination">
-              <li class="current"><a href="#">1</a></li>
-              <li><a href="#" aria-label="Page 2">2</a></li>
-              <li><a href="#" aria-label="Page 3">3</a></li>
-              <li><a href="#" aria-label="Page 4">4</a></li>
-              <li><a href="#" aria-label="Page 5">5</a></li>
-              <li><a href="#" aria-label="Page 6">6</a></li>
-              <li><a href="#" aria-label="Page 7">7</a></li>
+            <?php
+              if(!is_string($drives)){
+                $count = 1;
+
+                while($row = mysqli_fetch_array($drives)){
+                  if ($row['drive_approval'] !== "Pending") {
+                    if($count <= 3) {
+                        echo "<tr>
+                        <td class=\"driveImage\"><a><img src=\"images/{$row['drive_image']}\" alt=\"{$row['drive_title']}\"></a></td>
+                        <td class=\"driveTitle\"><a>{$row['drive_title']}</a></td>
+                        <td class=\"driveStart\">{$row['drive_date']}</td>
+                        <td class=\"driveRegister\">
+                          <h4 class=\"driveMonth\">THIS MONTH</h4>
+                          <h4 class=\"monthNum\">{$row['drive_month']}</h4>
+                          <h4 class=\"driveTotal\">TOTAL</h4>
+                          <h4 class=\"totalNum\">{$row['drive_regs']}</h4>
+                        </td>
+                      </tr>";
+                      
+                    }
+                  $count += 1;
+                  }                    
+                }
+                $pages = ceil ($count / 3);
+                echo "</tbody>
+                </table>
+                <div class=\"small-12 cell\">
+                  <ul class=\"pagination text-center\" role=\"navigation\" aria-label=\"Pagination\">";
+                  for ($i = 1; $i <= $pages; $i++) {
+                    if ($i === 1) {
+                      echo "<li class=\"current\"><a aria-label=\"Page 1\">1</a></li>";
+                    } else {
+                      echo "<li><a href=\"\" aria-label=\"Page {$i}\">{$i}</a></li>";
+                    }
+                  }
+              }else{
+                echo "<p class=\"error\">{$drives}</p>";
+              }
+              ?>
             </ul>
           </div>
         </div>
@@ -141,7 +187,7 @@
   <footer class="grid-x">
     <div class="small-6 cell" id="contact">
     <h3>CONTACT</h3>
-      <P>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p>
+    <div class="textCenter"><p>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p></div>
     </div>
     <div class="small-6 cell">
       <div id="sM">
@@ -168,5 +214,6 @@
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/drives.js"></script>
   </body>
 </html>

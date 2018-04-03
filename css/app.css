@@ -1,6 +1,6 @@
 body {
   background: url("../images/bckgrd.jpg");
-  height: 500px;
+  height: 500px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,25 +15,9 @@ h1, h2, h3, h4, a {
   font-family: 'Anton', sans-serif;
 }
 
-table tbody td {
-  padding: 0;
-}
-
-.headerIcons {
-  text-align: center;
-}
-
-.headerIcons button {
-  float: left;
-}
-
-.title-bar .menu-icon{
-  text-align: center;
-}
-
 .menu-icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 .menu-icon::after {
@@ -44,34 +28,8 @@ table tbody td {
 }
 
 .menu-icon:hover::after {
-  background: #888888;
-  box-shadow: 0 12px 0 #888888, 0 24px 0 #888888;
-}
-
-.logMenu::after{
-  width: 60px;
-  margin-top: 5px;
-  background: #e52b50;
-   box-shadow: 0 12px 0 #e52b50, 0 24px 0 #e52b50;
-   -webkit-box-shadow: 0 20px 0 #e52b50, 0 40px 0 #e52b50;
-   height: 12px;
-}
-
-.logMenu:hover::after{
-  background: #888888;
-  box-shadow: 0 20px 0 #888888, 0 40px 0 #888888;
-}
-
-#submitButton, #regButton, #loginButton, #editButton, #signOut, #driveButton, #startDrive {
-  border-radius: 25px;
-  background-color: #e52b50;
-  color: white;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 2em;
-  padding: 10px 30px;
-  cursor: pointer;
-  font-family: 'Anton', sans-serif;
+  background: #cacaca;
+  box-shadow: 0 12px 0 #cacaca, 0 24px 0 #cacaca;
 }
 
 #closeButton {
@@ -93,13 +51,12 @@ table tbody td {
 }
 
 .profileImg {
-  height: 60px;
-  width: 60px;
+  height: 75px;
+  width: 75px;
   border-radius: 50%;
   background-color: #e52b50;
-  margin-right: 15px;
   float: left;
-}
+ }
 
 #mainNav{
   background-color: #e52b50;
@@ -108,6 +65,11 @@ table tbody td {
   top: 0;
   z-index: 1;
   box-shadow: 0 30px 50px 15px rgba(0, 0, 0, 0.25);
+  transition: display 1s;
+}
+
+.navShow {
+  display: block !important;
 }
 
 #ribbon {
@@ -170,11 +132,11 @@ li, p {
   display: inline-block;
   margin: 0 auto;
   text-align: center;
-}
+ }
 
 #contact p{
   text-align: left;
-}
+ }
 
 footer {
   background-color: #e52b50;
@@ -230,7 +192,6 @@ footer h3 {
 #ontario {
   clear: both;
   margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 #ontario img {
@@ -238,11 +199,7 @@ footer h3 {
 }
 
 #bottomP {
-  margin-bottom: 15px;
-}
-
-.inquiries {
-  clear: both;
+  margin-bottom: 30px;
 }
 
 .contentMenu {
@@ -256,7 +213,11 @@ footer h3 {
   background-color: #e52b50;
 }
 
-.contentMenu .button:hover{
+.aboutActive{
+  text-decoration: underline !important;
+}
+
+.aboutActive:hover{
   text-decoration: underline;
 }
 
@@ -274,6 +235,47 @@ footer h3 {
   background-color: #e52b50;
 }
 
+.arrowRight {
+  border: solid white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 25px;
+  margin-top: 25px;
+  float: right;
+  cursor: pointer;
+ }
+ 
+ .arrowLeft {
+  border: solid white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 20px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-left: 25px;
+  margin-top: 25px;
+  float: left;
+  cursor: pointer;
+ }
+ #circles {
+  text-align: center;
+ }
+ 
+ #circles a{
+  color: #dddddd;
+  border-radius: 50%;
+  background-color: #dddddd;
+ }
+ 
+ #circles .active{
+  color: #888888;
+  border-radius: 50%;
+  background-color: #888888;
+ }
+
 .aboutContent h3, .aboutContent h4{
   text-align: center;
 }
@@ -281,6 +283,7 @@ footer h3 {
 #facts h3 {
   color: #e52b50;
   text-decoration: underline;
+  text-align: center;
 }
 
 #facts h4 {
@@ -289,17 +292,63 @@ footer h3 {
   margin-bottom: 10px;
   background-color: #e52b50;
   text-decoration: underline;
+  text-align: center;
 }
 
 #registration, #donation {
   width: 48%;
   background-color: #e52b50;
+  margin-bottom: 20px;
 }
 
 #registration p, #donation p{
   padding: 0 5%;
   height: 500px;
+  color: white;
 }
+
+
+#stats {
+  text-align: center;
+  margin: 0 auto;
+ }
+ 
+ .whiteBckgrd {
+  background-color: white;
+  color: #e52b50;
+  padding: 25px;
+  overflow: hidden;
+ }
+ 
+ .redBckgrd {
+  background-color: #e52b50;
+  color: white;
+  padding: 25px;
+  overflow: hidden;
+ }
+ 
+ .redBckgrd:last-child {
+  margin-bottom: 25px;
+ }
+ 
+ .leftHeart{
+  height: 75px;
+  display: block;
+ }
+ 
+ .rightHeart{
+  height: 100px;
+  display: block;
+ }
+ 
+ .redHeart{
+  height: 80px;
+  display: block;
+ }
+ 
+ .whiteHeart{
+  height: 120px;
+ }
 
 #faq h3 {
   color: #e52b50;
@@ -308,6 +357,7 @@ footer h3 {
   margin: 0 auto;
   margin-bottom: 15px;
   padding: 0 0 15px 0;
+  text-align: center;
 }
 
 #faq > ul > li{
@@ -321,6 +371,7 @@ footer h3 {
   color: white;
   width: 95%;
   font-size: 1.25em;
+  line-height: 1.1;
 }
 
 #faq > ul {
@@ -358,11 +409,10 @@ footer h3 {
   margin: 0;
   font-family: 'Oxygen', sans-serif;
   display: inline;
-}
-
-.nested a {
   text-decoration: underline;
 }
+
+
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after {
   border-color: white transparent transparent;
@@ -397,31 +447,17 @@ footer h3 {
   float: none;
 }
 
-#drivesInfoBanner {
-  color: white;
+#submitButton, #regButton, #loginButton, #editButton, #signOut, #driveButton, #startDrive {
+  border-radius: 25px;
   background-color: #e52b50;
+  color: white;
   text-align: center;
   margin: 0 auto;
-  padding-top: 15px;
-}
-
-#drivesInfoBanner p, #drivesInfoBanner a{
-  text-align: center;
-  font-size: .8em;
-  font-family: 'Oxygen', sans-serif;
-  color: white;
-  float: none;
-}
-
-#drivesInfoBanner p{
-  padding: 10px 40px;
-  text-align: left;
-}
-
-#drivesInfoBanner img{
-  height: 150px;
-  margin-left: 50px;
-}
+  font-size: 2em;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-family: 'Anton', sans-serif;
+ }
 
 #driveButton {
   color: #e52b50;
@@ -431,16 +467,96 @@ footer h3 {
   font-size: 2.25em;
   cursor: pointer;
   width: 20%;
-}
-
-#driveButton a {
+ }
+ 
+ #driveButton a {
   color: #e52b50;
   font-family: 'Anton', sans-serif;
-}
+ }
 
-#drivesTabs{
-  clear: both;
-}
+ .createDrive {
+  margin: 0 auto;
+ }
+
+ #drivesInfoBanner {
+  color: white;
+  background-color: #e52b50;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 15px;
+ }
+ 
+ #drivesInfoBanner p, #drivesInfoBanner a{
+  text-align: center;
+  font-size: .8em;
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  float: none;
+ }
+ 
+ #drivesInfoBanner p{
+  padding: 10px 40px;
+  text-align: left;
+ }
+ 
+ #drivesInfoBanner img{
+  height: 150px;
+  margin-left: 50px;
+ }
+ 
+ #req {
+  color: #e53b50;
+ }
+ 
+ #search {
+  color: white;
+ }
+ 
+ #driveCreate {
+  text-align: center;
+ }
+ 
+ #driveCreate label{
+  border-right: 4px solid #e52b50;
+  display: inline;
+  padding: 0 10px;
+  float: left;
+  width: 150px;
+  text-align: center;
+  margin-right: 15px;
+ }
+ 
+ select{
+  color: white;
+ }
+ 
+ select:focus{
+  background-color: #888888;
+ }
+ 
+ #driveCreate [type='text'], select{
+  width: 70%;
+ }
+ 
+ input[type="file"]{
+  background-color: #888888;
+  color: white;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 70%;
+ }
+
+ [type='text'], [type='password'], [type='tel'], [type='email'], textarea, select {
+  background-color: #888888;
+  color: white;
+ }
+
+ [type='text']:focus, [type='password']:focus, [type='tel']:focus, [type='email']:focus, textarea:focus, select:focus {
+  background-color: #888888;
+  color: white;
+ }
 
 #drivesTabs .button{
   margin-top: 15px;
@@ -450,40 +566,36 @@ footer h3 {
   background-color: #888888;
 }
 
-#drivesTabs .button:hover{
-  background-color: #e52b50;
-  transition: background-color 0.1s ease-out, color 0.1s ease-out;
-}
-
-#drivesTabs .button:active{
-  background-color: #e52b50;
-}
-
 #drivesTabs1 {
   clear: both;
-}
-
-#drivesTabs1 .button{
+ }
+ 
+ #drivesTabs1 .button{
   margin-top: 15px;
   font-family: 'Anton', sans-serif;
   font-size: 1.75em;
   color: white;
   background-color: #888888;
-}
-
-#drivesTabs1 .button:hover{
+ }
+ 
+ #drivesTabs1 .button:hover{
   background-color: #e52b50;
   transition: background-color 0.1s ease-out, color 0.1s ease-out;
-}
-
-#drivesTabs1 .button:active{
+ }
+ 
+ #drivesTabs1 .button:active{
   background-color: #e52b50;
+ }
+
+.driveTypeActive{
+  background-color: #e52b50 !important;
+  transition: background-color 0.1s ease-out, color 0.1s ease-out;
 }
 
 #imageTitle {
   background-color: #e52b50;
   text-align: center;
-  width: 100px;
+  width: 200px;
   height: 30px;
 }
 
@@ -493,34 +605,12 @@ th {
   background-color: #e52b50;
   text-align: center;
   border: 4px solid white;
-}
-
-th h5 {
-  font-family: 'Anton', sans-serif;
-  font-size: 1.75em;
+  font-size: 1.25em;
   margin-bottom: 0;
 }
 
-.searchBar {
-  background-color: #888888;
-  height: 40px;
-}
-
-.searchBar img{
-  height: 40px;
-  width: 40px;
-  margin: 0 auto;
-  float: left;
-  padding: 5px;
-}
-
-.searchBar p{
-  color: white;
-  padding: 5px;
-  margin-left: 15px;
-  font-size: 1.5em;
-  margin: 0 auto;
-  float: left;
+th:nth-child(2) {
+  width: 45%;
 }
 
 .driveInfo {
@@ -540,10 +630,14 @@ th h5 {
 .driveTitle{
   text-align: center;
   background-color: #888888;
-  color: white;
   font-family: 'Anton', sans-serif;
   font-size: 2em;
   border: 4px solid white;
+  color: white;
+}
+
+.driveTitle a{
+  color: white;
 }
 
 .driveStart {
@@ -595,48 +689,24 @@ th h5 {
 }
 
 .pagination .current {
+  background: none;
+}
+
+.pagination .current a{
   background-color: #e52b50;
-  color: white;
+  color: white !important;
 }
 
 .pagination a {
   color: #e52b50;
 }
 
-#circles {
-  text-align: center;
-}
-
-#circles a{
-  color: #dddddd;
-  border-radius: 50%;
-  background-color: #dddddd;
-}
-
-#circles .active{
-  color: #888888;
-  border-radius: 50%;
+.pagination a:hover {
   background-color: #888888;
+  color: white;
 }
 
-#circles1 {
-  text-align: center;
-  margin-top: 15px;
-}
-
-#circles1 a{
-  color: #888888;
-  border-radius: 50%;
-  background-color: #888888;
-}
-
-#circles1 .active{
-  color: #e52b50;
-  border-radius: 50%;
-  background-color: #e52b50;
-}
-
-.mainStory {
+#mainStory {
   background-color: #e52b50;
   color: white;
   width: 75%;
@@ -644,7 +714,7 @@ th h5 {
   padding: 10px 20px;
 }
 
-.mainStory h4 {
+#mainStory h4 {
   text-decoration: underline;
 }
 
@@ -668,28 +738,41 @@ th h5 {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-}
-
-.storiesBox {
+ }
+ 
+ .storiesBox {
   margin: auto;
   width: 80%;
-}
+ }
 
-iframe{
-  margin: 0 auto;
-}
-
-#vimeo {
+ #vimeo {
   color: #e52b50;
   text-align: center;
-}
-
-#vimeo a{
+ }
+ 
+ #vimeo a{
   color: #e52b50;
   text-align: center;
-}
+ }
 
-.userStory {
+ #circles1 {
+  text-align: center;
+  margin-top: 15px;
+ }
+ 
+ #circles1 a{
+  color: #888888;
+  border-radius: 50%;
+  background-color: #888888;
+ }
+ 
+ #circles1 .active{
+  color: #e52b50;
+  border-radius: 50%;
+  background-color: #e52b50;
+ }
+ 
+ .userStory {
   background-color: #e52b50;
   color: white;
   width: 32%;
@@ -697,28 +780,28 @@ iframe{
   display: inline-block;
   margin-bottom: 10px;
   margin-right: 5px;
-}
-
-.userStoryPic {
+ }
+ 
+ .userStoryPic {
   margin: 0 auto;
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  background-color: white;
-}
-
-.userStory h3{
+  background-color: #888888;
+ }
+ 
+ .userStory h3{
   text-align: center;
   margin: 0 auto;
   border-bottom: 2px solid white;
   width: 75%;
   margin-bottom: 15px;
-}
-
-.userStory a {
+ }
+ 
+ .userStory a {
   color: white;
   float: right;
-}
+ }
 
 #storiesLoad {
   font-family: 'Oxygen', sans-serif;
@@ -727,26 +810,39 @@ iframe{
   display: block;
 }
 
-.lightBox{
+.lightbox {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+  height: 100%;
+  display: none;
+  overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 500;
+}
+
+#driveDetails, .shareDetails {
   color: white;
   background-color: #e52b50;
   width: 60%;
   margin: 0 auto;
+  margin-top: 30px;
   padding: 15px;
   text-align: center;
 }
 
-.lightBox a{
+.shareDetails a, #driveDetails a {
   color: white;
   font-family: 'Oxygen', sans-serif;
   font-size: 2em;
 }
 
-.driveBox p, .driveBox h4{
+#driveDetails p, #driveDetails h4{
   text-align: left;
 }
 
-.driveBox img {
+#driveDetails img {
   height: 100px;
   margin-right: 10px;
 }
@@ -765,17 +861,17 @@ iframe{
   color: #e52b50;
   font-family: 'Oxygen', sans-serif;
 }
-
-#editButton{
+ 
+ #editButton{
   clear: both;
   margin-top: 15px;
-}
-
-#signOut {
+ }
+ 
+ #signOut {
   margin-right: 45px;
   margin-top: 15px;
   padding: 10px 30px;
-}
+ }
 
 label {
   font-family: 'Anton', sans-serif;
@@ -793,12 +889,6 @@ label {
   padding: 5px;
 }
 
-
-
-[type='text'], [type='password'], [type='tel'], [type='email'], textarea, select {
-  background-color: #888888;
-}
-
 .beAHero {
   color: white;
   background-color: #e52b50;
@@ -808,17 +898,18 @@ label {
   padding: 10px 20px;
   cursor: pointer;
   margin: 0 auto;
-  display: inline-block;
+  display: block;
+  width: 20%;
   margin-top: 25px
-}
-
-.beAHero:hover{
+ }
+ 
+ .beAHero:hover{
   color: white;
-}
-
-a .beAHero {
+ }
+ 
+ a .beAHero {
   margin: 0 auto;
-}
+ }
 
 #healthCardSection {
   text-align: center;
@@ -861,27 +952,56 @@ a .beAHero {
   margin-bottom: 20px;
 }
 
-.profilePic {
+.profilePicSub {
+  padding: 40px;
   background-color: #888888;
   border-radius: 50%;
   color: white;
   font-family: 'Oxygen', sans-serif;
   text-align: center;
-  margin: 0 auto;
+  float: left;
 }
 
-.profilePic h3 {
-  text-align: center;
+ .profilePic {
   margin: 0 auto;
-  padding: 15px;
-}
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+ }
+
+ .profileImg {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #e52b50;
+  margin-right: 15px;
+  float: left;
+ }
+ 
+ .logMenu::after{
+  width: 60px;
+  margin-top: 5px;
+  background: #e52b50;
+   box-shadow: 0 12px 0 #e52b50, 0 24px 0 #e52b50;
+   -webkit-box-shadow: 0 20px 0 #e52b50, 0 40px 0 #e52b50;
+   height: 12px;
+ }
+ 
+ .logMenu:hover::after{
+  background: #888888;
+  box-shadow: 0 20px 0 #888888, 0 40px 0 #888888;
+ }
 
 #profileForm {
   display: inline;
   margin: 0 auto;
 }
 
-#profileForm .pic {
+#profileContainer {
+  width: 60%;
+}
+ 
+ #profileForm .pic {
   padding: 40px;
   background-color: #888888;
   border-radius: 50%;
@@ -891,14 +1011,13 @@ a .beAHero {
   width: 75%;
   height: 300px;
   clear: both;
-}
-
-.pic label{
+ }
+ 
+ .pic label{
   margin-bottom: 45px;
   font-size: 1.5em;
   color: white;
-}
-
+ }
 
 #profileContainer {
   width: 60%;
@@ -909,7 +1028,7 @@ a .beAHero {
   background-color: #e52b50;
   color: white;
   text-align: center;
-  display: block;
+  display: inline-block;
   padding: 15px;
   width: 100%;
 }
@@ -1009,148 +1128,28 @@ a .beAHero {
   color: #e52b50;
 }
 
-.videoBox .lightBox {
+.videoPlayer {
   background-color: #e52b50;
-  padding: 15px 10px 15px 15px;
+  padding: 5px 15px 15px 15px;
   width: 80%;
-  height: 80%;
+  height: 90%;
   color: white;
-}
-
-.videoBox .lightBox video {
-  margin-top: 50px;
-  width: 95%;
-  height: 95%;
-}
-
-.arrowRight {
-  border: solid white;
-  border-width: 0 10px 10px 0;
-  display: inline-block;
-  padding: 20px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  margin-right: 25px;
-  margin-top: 25px;
-  float: right;
-  cursor: pointer;
-}
-
-.arrowLeft {
-  border: solid white;
-  border-width: 0 10px 10px 0;
-  display: inline-block;
-  padding: 20px;
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  margin-left: 25px;
-  margin-top: 25px;
-  float: left;
-  cursor: pointer;
-}
-
-#stats {
-  text-align: center;
   margin: 0 auto;
+  margin-top: 30px;
 }
 
-.whiteBckgrd {
-  background-color: white;
-  color: #e52b50;
-  padding: 25px;
-  overflow: hidden;
-}
-
-.redBckgrd {
-  background-color: #e52b50;
+.videoPlayer a
+{
   color: white;
-  padding: 25px;
-  overflow: hidden;
+  font-size: 2em;
 }
 
-.redBckgrd:last-child {
-  margin-bottom: 25px;
-}
-
-.leftHeart{
-  height: 75px;
-  display: block;
-}
-
-.rightHeart{
-  height: 100px;
-  display: block;
-}
-
-.redHeart{
-  height: 80px;
-  display: block;
-}
-
-.whiteHeart{
-  height: 120px;
-}
-
-.createDrive {
-  margin: 0 auto;
-}
-
-#req {
-  color: #e53b50;
-}
-
-#search {
-  color: white;
-}
-
-#driveCreate {
-  text-align: center;
-}
-
-#driveCreate label{
-  border-right: 4px solid #e52b50;
-  display: inline;
-  padding: 0 10px;
-  float: left;
-  width: 150px;
-  text-align: center;
-  margin-right: 15px;
-}
-
-select{
-  color: white;
-}
-
-select:focus{
-  background-color: #888888;
-}
-
-#driveCreate [type='text'], select{
-  width: 70%;
-}
-
-input[type="file"]{
-  background-color: #888888;
-  color: white;
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-  width: 70%;
-}
-
-#video_controls_bar{
-  background-color: #333;
-  padding: 10px;
-}
-
-.smallHeader{
-  background-color: #e52b50;
-  color: white;
-}
-
-.smallHeader a{
-  color: white;
+.videoPlayer video {
+  width: 90%;
+  max-width: 1280px;
+  height: 90%;
+  max-height: 720px;
+  margin: 0 5%;
 }
 
 /*Tablet*/
