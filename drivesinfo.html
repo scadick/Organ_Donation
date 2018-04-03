@@ -37,23 +37,54 @@
 
   <section id="mainContent">
     <div class="grid-x">
-      <h3 class="small-12 medium-4 cell pageTitles">DONOR DRIVES</h3>
-        <div class="small-12 cell" id="drivesBanner">
-          <img src="images/rally-flag.svg" alt="rally flag">
-          <h2>RALLY THE HEROES!</h2>
-          <p>Inspire others to act and become organ donors with donation drives.</p>
-          <div id="driveButton"><a href="drivesinfo.html">START A DRIVE</a></div>
-          <p><a href="">Learn more about drives</a></p>
+      <h3 class="small-12 medium-4 cell pageTitles">ABOUT DRIVES</h3>
+        <div class="small-12 cell" id="drivesInfoBanner">
+          <img src="images/rally-flag.svg" alt="rally flag" class="float-left">
+          <h2>INSPIRE OTHERS TO BE HEROES!</h2>
+          <p>With donation drives you can spread the word about organ and tissue donation. You can set up a drive as an individual or as an organization. You will be creating a small post about why organ and tissue donation is important to you. Once your drive is complete, you can share it and others on social media to inspire friends, family and colleagues to become organ and tissue donors.</p>
         </div>
+          <h3 class="small-12 medium-4 cell pageTitles">CREATE A DRIVE</h3>
+          <p class="small-12 cell" id="req">*All fields are required</p>
+          <div class="createDrive">
+          <div class="grid-container">
+          <div class="button-group stacked-for-small expanded small-12 cell" id="drivesTabs1">
+            <a class="button">ORGANIZATIONAL DRIVES</a>
+            <a class="button">INDIVIDUAL DRIVES</a>
+          </div>
+
+          <form id="driveCreate" action="form.php" method="post">
+                    <label>DRIVE PICTURE</label>
+                    <input type="file" name="cover" value="" required>
+
+                    <label>DRIVE TITLE</label>
+                    <input type="text" required>
+
+                    <label>CITY</label>
+                    <select name="citys" required>
+                      <option value="LONDON">LONDON</option>
+                      <option value="LUCAN">LUCAN</option>
+                      <option value="ILDERTON">ILDERTON</option>
+                      <option value="SARNIA">SARNIA</option>
+                    </select>
+
+                    <label>DRIVE GOAL</label>
+                    <input type="text" required>
+
+                    <label>DRIVE ABOUT</label>
+                    <textarea name="about" required cols="50" rows="8"></textarea>
+
+                    <button type="button" id="startDrive">SUBMIT</button>
+            </form>
+          </div>
+        <h3 class="small-12 medium-4 cell pageTitles">YOUR DRIVES</h3>
         <div class="grid-container">
         <div class="button-group stacked-for-small expanded small-12 cell" id="drivesTabs">
           <a class="button">ORGANIZATIONAL DRIVES</a>
           <a class="button">INDIVIDUAL DRIVES</a>
         </div>
-
         <div class="searchBar">
           <img src="images/search-icon.png" alt="search icon">
-          <p>Search</p>
+          <p id="search">Search</p>
         </div>
           <table class="small-12 cell unstriped">
             <thead>
@@ -93,6 +124,7 @@
         </div>
     </div>
   </div>
+</div>
   </section>
 
   <div class="driveBox">
