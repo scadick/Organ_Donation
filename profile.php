@@ -10,9 +10,12 @@
   $row = mysqli_fetch_array($profile);
 
   if(isset($_POST['confirm'])) {
+    $_SESSION['user_new'] = "no";
     $fname = trim($_POST['firstName']);
     $lname = trim($_POST['lastName']);
     $cusername = trim($_POST['newusername']);
+    $cpassword = trim($_POST['newpassword']);
+    $opassword = $row['user_pass'];
     $email = trim($_POST['email']);
     $phone = trim($_POST['phone']);
     $code = trim($_POST['postalCode']);
@@ -21,10 +24,8 @@
       $message = "Please enter your Postal Code";
     }else{
       $shortCode = substr("{$code}", 0, 3);
-      $result = editUser($fname, $lname, $cusername, $email, $phone, $shortCode, $code);
+      $result = editUser($fname, $lname, $cusername, $cpassword, $opassword, $email, $phone, $shortCode, $code);
       $message = $result;
-      echo $message;
-      $_SESSION['user_new'] = "no";
     }
   }
   if(isset($_POST['edit'])) {
@@ -50,7 +51,7 @@
   <body>
 
     <header class="grid-x">
-      <div class="small-3 cell float-right small-offset-9">
+      <div class="small-12 medium-5 large-3 cell float-right medium-offset-7 large-offset-9">
         <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
           <?php
           if(is_null($row['user_image'])){
@@ -141,6 +142,10 @@
             <label>USERNAME</label>
             <input type=\"text\" name=\"newusername\" value=\"{$row['user_name']}\">
             </div>
+            <div class=\"field\">
+            <label>PASSWORD</label>
+            <input type=\"password\" name=\"newpassword\">
+            </div>
             <div class=\"field pic small-12 medium-6 cell\">
             <label>PROFILE PICTURE</label>
             <input type=\"file\" name=\"image\">
@@ -160,6 +165,7 @@
             <button type=\"submit\" name=\"confirm\" id=\"editButton\" class=\"float-center\">CONFIRM</button>
           </form>
         </div>";
+        $_SESSION['user_new'] = "no";
         }
         ?>
       </div>
@@ -221,7 +227,7 @@
   <footer class="grid-x">
     <div class="small-6 cell" id="contact">
     <h3>CONTACT</h3>
-      <P>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p>
+    <div class="textCenter"><p>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p></div>
     </div>
     <div class="small-6 cell">
       <div id="sM">

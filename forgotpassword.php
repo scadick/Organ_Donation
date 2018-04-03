@@ -5,14 +5,14 @@
     $tbl = "tbl_user";
     $col = "user_email";
     $id = $_POST['email'];
-      $result = getSingle($tbl, $col, $id);
-      $profile = mysqli_fetch_array($result);
+      $resultMail = getSingle($tbl, $col, $id);
+      $profile = mysqli_fetch_array($resultMail);
       $email = $profile['user_email'];
       $id2 = $profile['user_id'];
       $password = password();
-      $message = submitMessage($email, $password, $id2);
-      $newPassword = passwordLoss($password, $id2);
-
+      //$message = submitMessage($email, $password, $id2);
+      //$newPassword = passwordLoss($password, $id2);
+      echo "<h3>{$password}</h3>";
   }
 ?>
 
@@ -31,7 +31,7 @@
   <body>
 
     <header class="grid-x">
-      <div class="small-3 cell float-right small-offset-9">
+      <div class="small-12 medium-5 large-3 cell float-right medium-offset-7 large-offset-9">
         <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
           <a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration"><h3 class="title-bar-title" id="menuHeader">BE A HERO</h3></a>
           <button class="menu-icon" type="button" data-toggle="mainNav">
@@ -66,7 +66,7 @@
   <footer class="grid-x">
     <div class="small-6 cell" id="contact">
     <h3>CONTACT</h3>
-      <P>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p>
+    <div class="textCenter"><p>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p></div>
     </div>
     <div class="small-6 cell">
       <div id="sM">

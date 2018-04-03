@@ -128,10 +128,15 @@ li, p {
   line-height: 1.25;
 }
 
+.textCenter{
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+ }
+
 #contact p{
   text-align: left;
-  margin-left: 230px;
-}
+ }
 
 footer {
   background-color: #e52b50;
@@ -278,6 +283,7 @@ footer h3 {
 #facts h3 {
   color: #e52b50;
   text-decoration: underline;
+  text-align: center;
 }
 
 #facts h4 {
@@ -351,6 +357,7 @@ footer h3 {
   margin: 0 auto;
   margin-bottom: 15px;
   padding: 0 0 15px 0;
+  text-align: center;
 }
 
 #faq > ul > li{
@@ -470,6 +477,32 @@ footer h3 {
  .createDrive {
   margin: 0 auto;
  }
+
+ #drivesInfoBanner {
+  color: white;
+  background-color: #e52b50;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 15px;
+ }
+ 
+ #drivesInfoBanner p, #drivesInfoBanner a{
+  text-align: center;
+  font-size: .8em;
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  float: none;
+ }
+ 
+ #drivesInfoBanner p{
+  padding: 10px 40px;
+  text-align: left;
+ }
+ 
+ #drivesInfoBanner img{
+  height: 150px;
+  margin-left: 50px;
+ }
  
  #req {
   color: #e53b50;
@@ -517,6 +550,12 @@ footer h3 {
 
  [type='text'], [type='password'], [type='tel'], [type='email'], textarea, select {
   background-color: #888888;
+  color: white;
+ }
+
+ [type='text']:focus, [type='password']:focus, [type='tel']:focus, [type='email']:focus, textarea:focus, select:focus {
+  background-color: #888888;
+  color: white;
  }
 
 #drivesTabs .button{
@@ -594,6 +633,7 @@ th:nth-child(2) {
   font-family: 'Anton', sans-serif;
   font-size: 2em;
   border: 4px solid white;
+  color: white;
 }
 
 .driveTitle a{
@@ -666,7 +706,7 @@ th:nth-child(2) {
   color: white;
 }
 
-.mainStory {
+#mainStory {
   background-color: #e52b50;
   color: white;
   width: 75%;
@@ -674,7 +714,7 @@ th:nth-child(2) {
   padding: 10px 20px;
 }
 
-.mainStory h4 {
+#mainStory h4 {
   text-decoration: underline;
 }
 
@@ -713,6 +753,23 @@ th:nth-child(2) {
  #vimeo a{
   color: #e52b50;
   text-align: center;
+ }
+
+ #circles1 {
+  text-align: center;
+  margin-top: 15px;
+ }
+ 
+ #circles1 a{
+  color: #888888;
+  border-radius: 50%;
+  background-color: #888888;
+ }
+ 
+ #circles1 .active{
+  color: #e52b50;
+  border-radius: 50%;
+  background-color: #e52b50;
  }
  
  .userStory {
@@ -765,7 +822,7 @@ th:nth-child(2) {
 	z-index: 500;
 }
 
-.driveDetails, .shareDetails {
+#driveDetails, .shareDetails {
   color: white;
   background-color: #e52b50;
   width: 60%;
@@ -775,17 +832,17 @@ th:nth-child(2) {
   text-align: center;
 }
 
-.shareDetails a, .driveDetails a {
+.shareDetails a, #driveDetails a {
   color: white;
   font-family: 'Oxygen', sans-serif;
   font-size: 2em;
 }
 
-.driveDetails p, .driveDetails h4{
+#driveDetails p, #driveDetails h4{
   text-align: left;
 }
 
-.driveDetails img {
+#driveDetails img {
   height: 100px;
   margin-right: 10px;
 }
@@ -832,19 +889,27 @@ label {
   padding: 5px;
 }
 
-[type='text'], [type='password'], [type='tel'], [type='email'] {
-  background-color: #dddddd;
-}
-
-#beAHero {
+.beAHero {
   color: white;
   background-color: #e52b50;
   font-family: 'Anton', sans-serif;
   border-radius: 45px;
   font-size: 2em;
-  padding: 15px;
+  padding: 10px 20px;
   cursor: pointer;
-}
+  margin: 0 auto;
+  display: block;
+  width: 20%;
+  margin-top: 25px
+ }
+ 
+ .beAHero:hover{
+  color: white;
+ }
+ 
+ a .beAHero {
+  margin: 0 auto;
+ }
 
 #healthCardSection {
   text-align: center;

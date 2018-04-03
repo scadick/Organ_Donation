@@ -28,7 +28,7 @@
   <body>
 
     <header class="grid-x">
-      <div class="small-3 cell float-right small-offset-9">
+      <div class="small-12 medium-5 large-3 cell float-right medium-offset-7 large-offset-9">
         <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
         <?php
           $log;
@@ -82,7 +82,7 @@
           <img src="images/rally-flag.svg" alt="rally flag">
           <h2>RALLY THE HEROES!</h2>
           <p>Inspire others to act and become organ donors with donation drives.</p>
-          <div id="driveButton"><a href="drivesinfo.html">START A DRIVE</a></div>
+          <div id="driveButton"><a href="drivesinfo.php">START A DRIVE</a></div>
           <p><a href="">Learn more about drives</a></p>
         </div>
       </div>
@@ -151,7 +151,7 @@
 
     <div class="driveBox">
       <section class="lightbox">
-        <div class="driveDetails">
+        <div id="driveDetails">
           <a class="float-right close-lightbox">X</a>
           <img src="images/uot.png" class="float-left" alt="U of T">
           <h4>UofT Gift of Life</h4>
@@ -165,7 +165,7 @@
     <footer class="grid-x">
       <div class="small-6 cell" id="contact">
       <h3>CONTACT</h3>
-        <P>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p>
+        <div class="textCenter"><p>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p></div>
       </div>
       <div class="small-6 cell">
         <div id="sM">

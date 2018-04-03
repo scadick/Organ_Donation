@@ -124,4 +124,33 @@
                   echo "<p class=\"error\">{$drives}</p>";
                 }
                 ?>*/
+    
+    //Drives Lightbox
+
+    var driveToggle = document.querySelectorAll(".driveTitle");
+    var driveToggleImg = document.querySelectorAll(".driveImage");
+    var box = document.querySelector("#driveDetails");
+
+    function lightbox(e) {
+        let target = e.currentTarget.classList.contains("drive");
+        let title = target.querySelector("");
+        /*circles.forEach(function(element, index) {
+            if (index == e.currentTarget.id){
+                circles[index].classList.add("active");
+                activeCircle.classList.remove("active");
+                activeCircle = circles[index];
+                title.innerHTML = titles[index];
+                desc.innerHTML = texts[index];
+                video.src = srcs[index];
+             }
+        });*/
+        console.log(e.currentTarget);
+    }
+
+    driveToggle.forEach(function(element, index) {
+        element.addEventListener('click', lightbox, false);
+    });
+    driveToggleImg.forEach(function(element, index) {
+        element.addEventListener('click', lightbox, false);
+    });
 })();

@@ -38,13 +38,23 @@
 		mysqli_close($link);
 	}
 
-	function editUser($fname, $lname, $username, $email, $phone, $shortCode, $code) {
+	function editUser($fname, $lname, $username, $password, $opassword, $email, $phone, $shortCode, $code) {
 		include('connect.php');
 		$id = $_SESSION['user_id'];
+		$pass = $password;
+		$password = password_hash($password, PASSWORD_DEFAULT);
 		if(empty($phone)){
-			$updateString = "UPDATE tbl_user t SET user_fname = '{$fname}', user_lname = '{$lname}', user_name = '{$username}', user_email = '{$email}', user_phone = NULL, user_code = '{$code}', user_new = 'no' WHERE t.user_id = '{$id}'";
+			if(empty($password)){
+				$updateString = "UPDATE tbl_user t SET user_fname = '{$fname}', user_lname = '{$lname}', user_name = '{$username}', user_pass = '{$opassword}', user_email = '{$email}', user_phone = NULL, user_code = '{$code}', user_new = 'no' WHERE t.user_id = '{$id}'";
+			}else{
+				$updateString = "UPDATE tbl_user t SET user_fname = '{$fname}', user_lname = '{$lname}', user_name = '{$username}', user_pass = '{$password}', user_email = '{$email}', user_phone = NULL, user_code = '{$code}', user_new = 'no' WHERE t.user_id = '{$id}'";
+			}
 		}else{
-			$updateString = "UPDATE tbl_user t SET user_fname = '{$fname}', user_lname = '{$lname}', user_name = '{$username}', user_email = '{$email}', user_phone = '{$phone}', user_code = '{$code}', user_new = 'no' WHERE t.user_id = '{$id}'";
+			if(empty($password)){
+				$updateString = "UPDATE tbl_user t SET user_fname = '{$fname}', user_lname = '{$lname}', user_name = '{$username}', user_pass = '{$opassword}', user_email = '{$email}', user_phone = '{$phone}', user_code = '{$code}', user_new = 'no' WHERE t.user_id = '{$id}'";
+			}else{
+				$updateString = "UPDATE tbl_user t SET user_fname = '{$fname}', user_lname = '{$lname}', user_name = '{$username}', user_pass = '{$password}', user_email = '{$email}', user_phone = NULL, user_code = '{$code}', user_new = 'no' WHERE t.user_id = '{$id}'";
+			}
 		}
 		
 		$updateQuery = mysqli_query($link, $updateString);
@@ -61,7 +71,12 @@
 			$locString = "UPDATE tbl_user_loc ul SET location_id = {$locID} WHERE ul.user_id = {$id}";
 			$locResult = mysqli_query($link, $locString);
 			if($locResult) {
-				redirect_to("profile.php");
+				$_SESSION['user_new'] = "no";
+				if(empty($password)){
+					return $opassword;
+				}else{
+					return $pass;
+				}
 			} else{
 				$message = "There was a problem updating up this user.";
 				return $message;

@@ -136,6 +136,47 @@
         element.addEventListener('click', readMore, false);
     });
 
+    // Story Nav
+    var storyBox = document.querySelector(".storiesBox");
+    var circlesBox = document.querySelector("#circles1");
+    var circles = circlesBox.querySelectorAll("a");
+    var mainStory = storyBox.querySelector("#mainStory");
+    var title = mainStory.querySelector("h4");
+    var desc = mainStory.querySelector("p");
+    var video = storyBox.querySelector("iframe");
+    var titles = ["I heard the words ‘enlarged heart’. I knew it was bad",
+    "I was not supporting my life anymore. I guess I can say I was in survival mode.",
+    "It’s tough to know that you have zero control. I had timed my whole life to basically end at 30.",
+    "You think to yourself, ‘Oh, it's pneumonia. It'll heal.’ Not all pneumonias heal."];
+    var texts = ["Ryley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words \"enlarged heart.\" She remembers asking the doctor, \"So you're telling me that my baby is going to die? And he said, 'No. But there's a good chance she's going to need a heart transplant.'<br><br>Joanna and her husband were living in a hotel near the transplant centre when they received a 2:00 a.m. call that a heart was available for Ryley. By 9:30 p.m. that night, they were able to see their daughter after her transplant surgery. \"She was on a breathing tube...but she was pink. And she just looked so wonderful.\"",
+    "It started with some weird symptoms. Trouble with her peripheral vision. Trouble opening small packages. A shooting pain down her left side. Andrea knew there was something going on. \"When I was wheeled into the hospital, I had a heart rate of 130 at rest. And that was the day that they diagnosed me with dilated cardiomyopathy.\"",
+    "At 10 years old the hospital determined that the strep bacterial Justin contracted had triggered an autoimmune disease, which started to attack his kidneys. He clearly remembers the day his mother told him he would have to go on dialysis. Life is not fun on dialysis. Without functioning kidneys you can’t even drink water. It’s difficult when you don’t have control over your life.<br><Br>In 1984, Justin received his first life saving kidney transplant. He has seen firsthand, the new life transplant brings for those in need.",
+    "It started with a bout of pneumonia that Carol thought would eventually go away. Unfortunately it didn't.,<br><br>\"It's like, 'What is happening to me? What is this?' Especially when you consider yourself still young.\"<br><br>Carol's doctors determined that she needed a double lung transplant. It was a difficult time for her and her family as they waited for a donor. Fortunately, Carol received that life-changing call and her transplant in June of 2009. Since then she's been able to live on her own again. She's thankful for the opportunity to play with her grandchildren and to win a silver medal at the Transplant Games."];
+    var srcs = ["https://player.vimeo.com/video/24894938?color=019f47&title=0&byline=0&portrait=0",
+    "https://player.vimeo.com/video/24883613?color=019f47&title=0&byline=0&portrait=0",
+    "https://player.vimeo.com/video/24894829?color=019f47&title=0&byline=0&portrait=0",
+    "https://player.vimeo.com/video/24922306?color=019f47&title=0&byline=0&portrait=0"];
+    var activeCircle;
+
+    function storyChange(e) {
+        circles.forEach(function(element, index) {
+            if (index == e.currentTarget.id){
+                circles[index].classList.add("active");
+                activeCircle.classList.remove("active");
+                activeCircle = circles[index];
+                title.innerHTML = titles[index];
+                desc.innerHTML = texts[index];
+                video.src = srcs[index];
+             }
+        });
+    }
 
 
+    circles.forEach(function(element, index) {
+        element.addEventListener('click', storyChange, false);
+        element.id = index;
+        if(circles[index].classList.contains("active")) {
+            activeCircle = circles[index];
+        }
+    });
 })();

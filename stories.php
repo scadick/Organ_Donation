@@ -41,7 +41,7 @@
   <body>
 
     <header class="grid-x">
-      <div class="small-3 cell float-right small-offset-9">
+      <div class="small-12 medium-5 large-3 cell float-right medium-offset-7 large-offset-9">
         <div id="hamMenu" class="title-bar" data-responsive-toggle="mainNav">
           <?php
             $log;
@@ -90,11 +90,18 @@
   <section id="mainContent">
     <h3 class="small-12 cell pageTitles">FEATURED STORIES</h3>
     <div class="storiesBox">
-    <iframe class="small-12 cell" src="https://player.vimeo.com/video/24894938?color=019f47&title=0&byline=0&portrait=0" width="640" height="332" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-     <p class="small-12 cell" id="vimeo"><a href="https://vimeo.com/24894938">Meet Ryley</a> from <a href="https://vimeo.com/trilliumgift">Trillium Gift of Life Network</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-      <div class="mainStory">
+      <iframe class="small-12 cell" src="https://player.vimeo.com/video/24894938?color=019f47&title=0&byline=0&portrait=0" width="640" height="332" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <div id="mainStory">
         <h4>“I HEARD THE WORDS ‘ENLARGED HEART’. I KNEW IT WAS BAD.”</h4>
         <p>Ryley was only two months old when she became quite ill. It was in the ER that her mother, Joanna, heard the words "enlarged heart." She remembers asking the doctor, "So you're telling me that my baby is going to die? And he said, 'No. But there's a good chance she's going to need a heart transplant.'" <br><br> Joanna and her husband were living in a hotel near the transplant centre when they received a 2:00 a.m. call that a heart was available for Ryley. By 9:30 p.m. that night, they were able to see their daughter after her transplant surgery. "She was on a breathing tube...but she was pink. And she just looked so wonderful."</p>
+      </div>
+      <div id="circles1">
+       <ul class="pagination">
+         <li><a href="#" class="active">1</a></li>
+         <li><a href="#">2</a></li>
+         <li><a href="#">3</a></li>
+         <li><a href="#">4</a></li>
+       </ul>
       </div>
     </div>
       <h3 class="small-12 cell pageTitles">STORIES FROM USERS</h3>
@@ -110,13 +117,41 @@
           while($count <= 6 && $row = mysqli_fetch_array($stories)){
             $lname = substr($row['user_lname'], 0, 1);
             $text = substr($row['story_text'], 0, 145);
-            echo "<div class=\"userStory\">
-              <div class=\"userStoryPic\"></div>
-              <h3>{$row['user_fname']} {$lname}.</h3>
+            echo "<div class=\"userStory\">";
+            if(is_null($row['user_image'])){
+              echo "<div class=\"userStoryPic\"></div>";
+            }else{
+              echo "<div class=\"userStoryPic\">
+              <img class=\"profilePic\" src=\"images/{$row['user_image']}\" alt=\"{$row['user_fname']} {$row['user_lname']}\">
+              </div>";
+            }
+            echo  "<h3>{$row['user_fname']} {$lname}.</h3>
               <p>{$text}...</p>
               <a id={$row['story_id']}>...read more</a>
             </div>";
             $count++;
+            /*<?php
+            $log;
+            if(isset($_SESSION['user_id'])) {
+              $log = "yes";
+              $tbl = "tbl_user";
+              $col = "user_id";
+              $id = $_SESSION['user_id'];
+              $profile = getSingle($tbl, $col, $id);
+              $row = mysqli_fetch_array($profile);
+              if(is_null($row['user_image'])){
+                echo "<div class=\"profileImg\"></div>";
+              }else{
+                echo "<div class=\"profileImg\">
+                <img class=\"profilePic\" src=\"images/{$row['user_image']}\" alt=\"{$row['user_fname']} {$row['user_lname']}\">
+                </div>";
+              }
+              echo "<button class=\"menu-icon logMenu\" type=\"submit\" data-toggle=\"mainNav\"></button>";
+            } else {
+              echo "<a href=\"https://www.ontario.ca/page/organ-and-tissue-donor-registration\"><h3 class=\"title-bar-title\" id=\"menuHeader\">BE A HERO</h3></a>
+              <button class=\"menu-icon\" type=\"button\" data-toggle=\"mainNav\"></button";
+            }
+          ?>*/
           }
 
         }else{
@@ -124,7 +159,7 @@
         }
         ?>
       </div>
-      <a id="storiesLoad" href="admin/phpscripts/">Load more</a>
+      <a id="storiesLoad">Load more</a>
   </section>
 
   <section class="shareBox">
@@ -143,7 +178,7 @@
   <footer class="grid-x">
     <div class="small-6 cell" id="contact">
     <h3>CONTACT</h3>
-      <P>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p>
+    <div class="textCenter"><p>Trillium Gift of Life Network<br>483 Bay Street, South Tower, 4th Floor<br>Toronto, ON M5G 2C9<br><br>1-800-263-2833<br>416-363-4001 (Toronto)<br><br>info@giftoflife.ca</p></div>
     </div>
     <div class="small-6 cell">
       <div id="sM">
