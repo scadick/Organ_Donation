@@ -50,57 +50,53 @@ $(document).foundation();
 
     window.addEventListener('resize', widthCheck);
 
-    // About Page
-    var Atabs = document.querySelectorAll('.aboutTab');
-    var content = document.querySelectorAll('.aboutSection');
-    var appliedClass = "";
-    var activeTab = "";
+    //basic lightbox
+    var boxType = "";
 
-    function tabChange(e, index) {
-        content.forEach(function(element, index) {
-            if (index == e.currentTarget.id){
-                content[index].classList.remove("hide");
-                Atabs[index].classList.add("aboutActive");
-                activeTab.classList.remove("aboutActive");
-                activeTab = Atabs[index];
-                appliedClass.classList.add("hide");
-                appliedClass = content[index];
-                
-            }
+    function popLightbox(e) {
+        //debugger;
+        window.scrollTo(0, 0);
+        document.body.style.overflow = "hidden";
+        if(e.currentTarget.id == "shareButton") {
+            boxType = document.querySelector('.shareBox');
+        }else if(e.currentTarget.classList.contains("playButton")){
+            boxType = document.querySelector('.videoBox');
+        }else if(e.currentTarget.classList.contains("driveImage") || e.currentTarget.classList.contains("driveTitle")) {
+            boxType = document.querySelector('.driveBox');
+        }
+
+        let lightbox = boxType.querySelector('.lightbox');
+        lightbox.style.display = 'block';
+
+        let lightboxClose = lightbox.querySelector('.close-lightbox');
+        lightboxClose.addEventListener('click', closeLightbox, false);
+    }
+
+    function closeLightbox() {
+        //debugger;
+        document.body.style.overflow = "scroll";
+        let lightbox = document.querySelector('.lightbox');
+        lightbox.style.display = 'none';
+    }
+
+    if(window.location.href.indexOf("stories") > -1) {
+        var stories = document.querySelector(".userSubmitted");
+        var storiesToggle = stories.querySelectorAll("a");
+        var share = document.querySelector("#shareButton");
+
+        share.addEventListener('click', popLightbox, false);
+    }else if(window.location.href.indexOf("index") > -1) {
+        var videoToggle = document.querySelector(".playButton");
+        videoToggle.addEventListener('click', popLightbox, false);
+    }else if(window.location.href.indexOf("drives") > -1) {
+        var driveToggle = document.querySelectorAll(".driveTitle");
+        var driveToggleImg = document.querySelectorAll(".driveImage");
+
+        driveToggle.forEach(function(element, index) {
+            element.addEventListener('click', popLightbox, false);
+        });
+        driveToggleImg.forEach(function(element, index) {
+            element.addEventListener('click', popLightbox, false);
         });
     }
-
-    Atabs.forEach(function(element, index) {
-        element.addEventListener('click', tabChange, false);
-        element.id = index;
-        if(!content[index].classList.contains("hide")) {
-            appliedClass = content[index];
-            activeTab = Atabs[index];
-        }
-    });
-
-    // Drives Page
-    var tabsBar = document.querySelector("#drivesTabs");
-    var Dtabs = tabsBar.querySelectorAll("a");
-    var Dtabactive;
-
-    function driveType(e, index) {
-        if (e.currentTarget.id === "0"){
-            Dtabs[0].classList.add("driveTypeActive");
-            Dtabactive.classList.remove("driveTypeActive");
-            Dtabactive = Dtabs[0];
-        } else {
-            Dtabs[1].classList.add("driveTypeActive");
-            Dtabactive.classList.remove("driveTypeActive");
-            Dtabactive = Dtabs[1];
-        }
-    }
-
-    Dtabs.forEach(function(element, index) {
-        element.addEventListener('click', driveType, false);
-        element.id = index;
-        Dtabactive = Dtabs[0];
-    });
-
-
 })();

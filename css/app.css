@@ -50,6 +50,14 @@ h1, h2, h3, h4, a {
   background: none;
 }
 
+.profileImg {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  background-color: #e52b50;
+  float: left;
+ }
+
 #mainNav{
   background-color: #e52b50;
   width: 20vw;
@@ -130,6 +138,7 @@ footer {
   color: white;
   text-align: center;
   margin-top: 20px;
+  clear: both;
 }
 
 footer h3 {
@@ -221,6 +230,47 @@ footer h3 {
   background-color: #e52b50;
 }
 
+.arrowRight {
+  border: solid white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 25px;
+  margin-top: 25px;
+  float: right;
+  cursor: pointer;
+ }
+ 
+ .arrowLeft {
+  border: solid white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 20px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-left: 25px;
+  margin-top: 25px;
+  float: left;
+  cursor: pointer;
+ }
+ #circles {
+  text-align: center;
+ }
+ 
+ #circles a{
+  color: #dddddd;
+  border-radius: 50%;
+  background-color: #dddddd;
+ }
+ 
+ #circles .active{
+  color: #888888;
+  border-radius: 50%;
+  background-color: #888888;
+ }
+
 .aboutContent h3, .aboutContent h4{
   text-align: center;
 }
@@ -236,17 +286,63 @@ footer h3 {
   margin-bottom: 10px;
   background-color: #e52b50;
   text-decoration: underline;
+  text-align: center;
 }
 
 #registration, #donation {
   width: 48%;
   background-color: #e52b50;
+  margin-bottom: 20px;
 }
 
 #registration p, #donation p{
   padding: 0 5%;
   height: 500px;
+  color: white;
 }
+
+
+#stats {
+  text-align: center;
+  margin: 0 auto;
+ }
+ 
+ .whiteBckgrd {
+  background-color: white;
+  color: #e52b50;
+  padding: 25px;
+  overflow: hidden;
+ }
+ 
+ .redBckgrd {
+  background-color: #e52b50;
+  color: white;
+  padding: 25px;
+  overflow: hidden;
+ }
+ 
+ .redBckgrd:last-child {
+  margin-bottom: 25px;
+ }
+ 
+ .leftHeart{
+  height: 75px;
+  display: block;
+ }
+ 
+ .rightHeart{
+  height: 100px;
+  display: block;
+ }
+ 
+ .redHeart{
+  height: 80px;
+  display: block;
+ }
+ 
+ .whiteHeart{
+  height: 120px;
+ }
 
 #faq h3 {
   color: #e52b50;
@@ -305,7 +401,11 @@ footer h3 {
   color: white;
   margin: 0;
   font-family: 'Oxygen', sans-serif;
+  display: inline;
+  text-decoration: underline;
 }
+
+
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after {
   border-color: white transparent transparent;
@@ -340,19 +440,84 @@ footer h3 {
   float: none;
 }
 
+#submitButton, #regButton, #loginButton, #editButton, #signOut, #driveButton, #startDrive {
+  border-radius: 25px;
+  background-color: #e52b50;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2em;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-family: 'Anton', sans-serif;
+ }
+
 #driveButton {
   color: #e52b50;
   background-color: white;
   font-family: 'Anton', sans-serif;
   border-radius: 25px;
-  font-size: 2em;
-  padding: 15px;
+  font-size: 2.25em;
   cursor: pointer;
-}
+  width: 20%;
+ }
+ 
+ #driveButton a {
+  color: #e52b50;
+  font-family: 'Anton', sans-serif;
+ }
 
-#driveButton:hover {
+ .createDrive {
+  margin: 0 auto;
+ }
+ 
+ #req {
+  color: #e53b50;
+ }
+ 
+ #search {
+  color: white;
+ }
+ 
+ #driveCreate {
+  text-align: center;
+ }
+ 
+ #driveCreate label{
+  border-right: 4px solid #e52b50;
+  display: inline;
+  padding: 0 10px;
+  float: left;
+  width: 150px;
+  text-align: center;
+  margin-right: 15px;
+ }
+ 
+ select{
+  color: white;
+ }
+ 
+ select:focus{
   background-color: #888888;
-}
+ }
+ 
+ #driveCreate [type='text'], select{
+  width: 70%;
+ }
+ 
+ input[type="file"]{
+  background-color: #888888;
+  color: white;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 70%;
+ }
+
+ [type='text'], [type='password'], [type='tel'], [type='email'], textarea, select {
+  background-color: #888888;
+ }
 
 #drivesTabs .button{
   margin-top: 15px;
@@ -361,6 +526,27 @@ footer h3 {
   color: white;
   background-color: #888888;
 }
+
+#drivesTabs1 {
+  clear: both;
+ }
+ 
+ #drivesTabs1 .button{
+  margin-top: 15px;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.75em;
+  color: white;
+  background-color: #888888;
+ }
+ 
+ #drivesTabs1 .button:hover{
+  background-color: #e52b50;
+  transition: background-color 0.1s ease-out, color 0.1s ease-out;
+ }
+ 
+ #drivesTabs1 .button:active{
+  background-color: #e52b50;
+ }
 
 .driveTypeActive{
   background-color: #e52b50 !important;
@@ -405,10 +591,13 @@ th:nth-child(2) {
 .driveTitle{
   text-align: center;
   background-color: #888888;
-  color: white;
   font-family: 'Anton', sans-serif;
   font-size: 2em;
   border: 4px solid white;
+}
+
+.driveTitle a{
+  color: white;
 }
 
 .driveStart {
@@ -460,12 +649,21 @@ th:nth-child(2) {
 }
 
 .pagination .current {
+  background: none;
+}
+
+.pagination .current a{
   background-color: #e52b50;
-  color: white;
+  color: white !important;
 }
 
 .pagination a {
   color: #e52b50;
+}
+
+.pagination a:hover {
+  background-color: #888888;
+  color: white;
 }
 
 .mainStory {
@@ -495,31 +693,398 @@ th:nth-child(2) {
   cursor: pointer;
 }
 
-#shareButton:hover {
+.userSubmitted {
+  padding: 15px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+ }
+ 
+ .storiesBox {
+  margin: auto;
+  width: 80%;
+ }
+
+ #vimeo {
+  color: #e52b50;
+  text-align: center;
+ }
+ 
+ #vimeo a{
+  color: #e52b50;
+  text-align: center;
+ }
+ 
+ .userStory {
+  background-color: #e52b50;
+  color: white;
+  width: 32%;
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 5px;
+ }
+ 
+ .userStoryPic {
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #888888;
+ }
+ 
+ .userStory h3{
+  text-align: center;
+  margin: 0 auto;
+  border-bottom: 2px solid white;
+  width: 75%;
+  margin-bottom: 15px;
+ }
+ 
+ .userStory a {
+  color: white;
+  float: right;
+ }
+
+#storiesLoad {
+  font-family: 'Oxygen', sans-serif;
+  color: black;
+  text-align: center;
+  display: block;
+}
+
+.lightbox {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+  height: 100%;
+  display: none;
+  overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 500;
+}
+
+.driveDetails, .shareDetails {
+  color: white;
+  background-color: #e52b50;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 15px;
+  text-align: center;
+}
+
+.shareDetails a, .driveDetails a {
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 2em;
+}
+
+.driveDetails p, .driveDetails h4{
+  text-align: left;
+}
+
+.driveDetails img {
+  height: 100px;
+  margin-right: 10px;
+}
+
+.shareStory, .supportCause {
+  background: white;
+  color: #e52b50;
+  font-family: 'Anton', sans-serif;
+  border-radius: 25px;
+  font-size: 1.5em;
+  padding: 15px 40px;
+  cursor: pointer;
+}
+
+#forgotPassword {
+  color: #e52b50;
+  font-family: 'Oxygen', sans-serif;
+}
+ 
+ #editButton{
+  clear: both;
+  margin-top: 15px;
+ }
+ 
+ #signOut {
+  margin-right: 45px;
+  margin-top: 15px;
+  padding: 10px 30px;
+ }
+
+label {
+  font-family: 'Anton', sans-serif;
+  color: #e52b50;
+  font-size: 1.5em;
+}
+
+#contactForm {
+  margin-top: 25px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.field {
+  padding: 5px;
+}
+
+[type='text'], [type='password'], [type='tel'], [type='email'] {
+  background-color: #dddddd;
+}
+
+#beAHero {
+  color: white;
+  background-color: #e52b50;
+  font-family: 'Anton', sans-serif;
+  border-radius: 45px;
+  font-size: 2em;
+  padding: 15px;
+  cursor: pointer;
+}
+
+#healthCardSection {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+#healthCardSection h3 {
+  padding-top: 20px;
+}
+
+#forgottenEmail {
+  width: 100%;
+}
+
+.headerVideo {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.headerBckgrd {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  height: 95%;
+  width: 100%;
+  background-image: url('../images/organ-gif.gif');
+  background-position: center;
+  filter: brightness(.5);
   background-color: #888888;
 }
 
-.userSubmitted {
-  padding: 15px;
+#heart {
+  color: #e52b50;
 }
 
-#userStory {
+.headerVideo img {
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.profilePicSub {
+  padding: 40px;
+  background-color: #888888;
+  border-radius: 50%;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  text-align: center;
+  float: left;
+}
+
+ .profilePic {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+ }
+
+ .profileImg {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #e52b50;
+  margin-right: 15px;
+  float: left;
+ }
+ 
+ .logMenu::after{
+  width: 60px;
+  margin-top: 5px;
+  background: #e52b50;
+   box-shadow: 0 12px 0 #e52b50, 0 24px 0 #e52b50;
+   -webkit-box-shadow: 0 20px 0 #e52b50, 0 40px 0 #e52b50;
+   height: 12px;
+ }
+ 
+ .logMenu:hover::after{
+  background: #888888;
+  box-shadow: 0 20px 0 #888888, 0 40px 0 #888888;
+ }
+
+#profileForm {
+  display: inline;
+  margin: 0 auto;
+}
+
+#profileContainer {
+  width: 60%;
+}
+ 
+ #profileForm .pic {
+  padding: 40px;
+  background-color: #888888;
+  border-radius: 50%;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  text-align: center;
+  width: 75%;
+  height: 300px;
+  clear: both;
+ }
+ 
+ .pic label{
+  margin-bottom: 45px;
+  font-size: 1.5em;
+  color: white;
+ }
+
+#profileContainer {
+  width: 60%;
+}
+
+.yourDrives h3 {
+  margin-top: 20px;
   background-color: #e52b50;
   color: white;
-  width: 300px;
-  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  padding: 15px;
+  width: 100%;
 }
 
-#userStory h3{
-  text-decoration: underline;
+.yourDrives a {
+  color: #e52b50;
+  clear: both;
+  font-family: 'Oxygen', sans-serif;
+  float: right;
 }
 
-#userStory a {
+.personalDrives {
+  background-color: #e52b50;
   color: white;
+  padding: 10px;
+  width: 49%;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.25em;
 }
 
-#userStory a:hover{
-  color: #888888;
+.picCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #888888;
+  float: left;
+}
+
+.personalInfo {
+  margin-left: 15px;
+  padding: 5px;
+  background-color: #888888;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+
+.personalInfo h4{
+  color: #e52b50;
+  margin-right: 10px;
+  background-color: #888888;
+  padding: 0 5px;
+  width: 50%;
+  border-right: 5px solid #e52b50;
+  float: left;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.personalInfo p{
+  color: white;
+  background-color: #888888;
+  font-size: 1.25em;
+  display: inline;
+  float: right;
+  text-align: left;
+  width: 45%;
+  margin-right: 10px;
+  padding-top: 5px;
+}
+
+.centerSubmit {
+  text-align: center;
+}
+
+.playCircle {
+  float: left;
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 5px solid #e52b50;
+}
+
+.playTriangle {
+  margin-left: 30px;
+  margin-top: 10px;
+  border: 35px solid transparent;
+  border-left: 50px solid #e52b50;
+  width: 0;
+  height: 0;
+}
+
+.playButton {
+  cursor: pointer;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.playButton h3 {
+  margin-left: 15px;
+  margin-top: 25px;
+  float: right;
+  color: #e52b50;
+}
+
+.videoPlayer {
+  background-color: #e52b50;
+  padding: 5px 15px 15px 15px;
+  width: 80%;
+  height: 90%;
+  color: white;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.videoPlayer a
+{
+  color: white;
+  font-size: 2em;
+}
+
+.videoPlayer video {
+  width: 90%;
+  max-width: 1280px;
+  height: 90%;
+  max-height: 720px;
+  margin: 0 5%;
 }
 
 /*Tablet*/
